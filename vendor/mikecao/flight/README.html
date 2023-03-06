@@ -1,0 +1,631 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="what-is-flight-">What is Flight?</h1>
+<p>Flight is a fast, simple, extensible framework for PHP. Flight enables you to 
+quickly and easily build RESTful web applications.</p>
+<pre><code class="lang-php">require &#39;flight/Flight.php&#39;;
+
+Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+Flight::start();
+</code></pre>
+<p><a href="http://flightphp.com/learn">Learn more</a></p>
+<h1 id="requirements">Requirements</h1>
+<p>Flight requires <code>PHP 5.3</code> or greater.</p>
+<h1 id="license">License</h1>
+<p>Flight is released under the <a href="http://flightphp.com/license">MIT</a> license.</p>
+<h1 id="installation">Installation</h1>
+<p>1. Download the files.</p>
+<p>If you&#39;re using <a href="https://getcomposer.org/">Composer</a>, you can run the following command:</p>
+<pre><code>composer require mikecao/flight
+</code></pre><p>OR you can <a href="https://github.com/mikecao/flight/archive/master.zip">download</a> them directly 
+and extract them to your web directory.</p>
+<p>2. Configure your webserver.</p>
+<p>For <em>Apache</em>, edit your <code>.htaccess</code> file with the following:</p>
+<pre><code>RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+</code></pre><p><strong>Note</strong>: If you need to use flight in a subdirectory add the line <code>RewriteBase /subdir/</code> just after <code>RewriteEngine On</code>.</p>
+<p>For <em>Nginx</em>, add the following to your server declaration:</p>
+<pre><code>server {
+    location / {
+        try_files $uri $uri/ /index.php;
+    }
+}
+</code></pre><p>3. Create your <code>index.php</code> file.</p>
+<p>First include the framework.</p>
+<pre><code class="lang-php">require &#39;flight/Flight.php&#39;;
+</code></pre>
+<p>If you&#39;re using Composer, run the autoloader instead.</p>
+<pre><code class="lang-php">require &#39;vendor/autoload.php&#39;;
+</code></pre>
+<p>Then define a route and assign a function to handle the request.</p>
+<pre><code class="lang-php">Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+</code></pre>
+<p>Finally, start the framework.</p>
+<pre><code class="lang-php">Flight::start();
+</code></pre>
+<h1 id="routing">Routing</h1>
+<p>Routing in Flight is done by matching a URL pattern with a callback function.</p>
+<pre><code class="lang-php">Flight::route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+</code></pre>
+<p>The callback can be any object that is callable. So you can use a regular function:</p>
+<pre><code class="lang-php">function hello(){
+    echo &#39;hello world!&#39;;
+}
+
+Flight::route(&#39;/&#39;, &#39;hello&#39;);
+</code></pre>
+<p>Or a class method:</p>
+<pre><code class="lang-php">class Greeting {
+    public static function hello() {
+        echo &#39;hello world!&#39;;
+    }
+}
+
+Flight::route(&#39;/&#39;, array(&#39;Greeting&#39;, &#39;hello&#39;));
+</code></pre>
+<p>Or an object method:</p>
+<pre><code class="lang-php">class Greeting
+{
+    public function __construct() {
+        $this-&gt;name = &#39;John Doe&#39;;
+    }
+
+    public function hello() {
+        echo &quot;Hello, {$this-&gt;name}!&quot;;
+    }
+}
+
+$greeting = new Greeting();
+
+Flight::route(&#39;/&#39;, array($greeting, &#39;hello&#39;)); 
+</code></pre>
+<p>Routes are matched in the order they are defined. The first route to match a
+request will be invoked.</p>
+<h2 id="method-routing">Method Routing</h2>
+<p>By default, route patterns are matched against all request methods. You can respond
+to specific methods by placing an identifier before the URL.</p>
+<pre><code class="lang-php">Flight::route(&#39;GET /&#39;, function(){
+    echo &#39;I received a GET request.&#39;;
+});
+
+Flight::route(&#39;POST /&#39;, function(){
+    echo &#39;I received a POST request.&#39;;
+});
+</code></pre>
+<p>You can also map multiple methods to a single callback by using a <code>|</code> delimiter:</p>
+<pre><code class="lang-php">Flight::route(&#39;GET|POST /&#39;, function(){
+    echo &#39;I received either a GET or a POST request.&#39;;
+});
+</code></pre>
+<h2 id="regular-expressions">Regular Expressions</h2>
+<p>You can use regular expressions in your routes:</p>
+<pre><code class="lang-php">Flight::route(&#39;/user/[0-9]+&#39;, function(){
+    // This will match /user/1234
+});
+</code></pre>
+<h2 id="named-parameters">Named Parameters</h2>
+<p>You can specify named parameters in your routes which will be passed along to
+your callback function.</p>
+<pre><code class="lang-php">Flight::route(&#39;/@name/@id&#39;, function($name, $id){
+    echo &quot;hello, $name ($id)!&quot;;
+});
+</code></pre>
+<p>You can also include regular expressions with your named parameters by using
+the <code>:</code> delimiter:</p>
+<pre><code class="lang-php">Flight::route(&#39;/@name/@id:[0-9]{3}&#39;, function($name, $id){
+    // This will match /bob/123
+    // But will not match /bob/12345
+});
+</code></pre>
+<h2 id="optional-parameters">Optional Parameters</h2>
+<p>You can specify named parameters that are optional for matching by wrapping
+segments in parentheses.</p>
+<pre><code class="lang-php">Flight::route(&#39;/blog(/@year(/@month(/@day)))&#39;, function($year, $month, $day){
+    // This will match the following URLS:
+    // /blog/2012/12/10
+    // /blog/2012/12
+    // /blog/2012
+    // /blog
+});
+</code></pre>
+<p>Any optional parameters that are not matched will be passed in as NULL.</p>
+<h2 id="wildcards">Wildcards</h2>
+<p>Matching is only done on individual URL segments. If you want to match multiple
+segments you can use the <code>*</code> wildcard.</p>
+<pre><code class="lang-php">Flight::route(&#39;/blog/*&#39;, function(){
+    // This will match /blog/2000/02/01
+});
+</code></pre>
+<p>To route all requests to a single callback, you can do:</p>
+<pre><code class="lang-php">Flight::route(&#39;*&#39;, function(){
+    // Do something
+});
+</code></pre>
+<h2 id="passing">Passing</h2>
+<p>You can pass execution on to the next matching route by returning <code>true</code> from
+your callback function.</p>
+<pre><code class="lang-php">Flight::route(&#39;/user/@name&#39;, function($name){
+    // Check some condition
+    if ($name != &quot;Bob&quot;) {
+        // Continue to next route
+        return true;
+    }
+});
+
+Flight::route(&#39;/user/*&#39;, function(){
+    // This will get called
+});
+</code></pre>
+<h2 id="route-info">Route Info</h2>
+<p>If you want to inspect the matching route information, you can request for the route
+object to be passed to your callback by passing in <code>true</code> as the third parameter in
+the route method. The route object will always be the last parameter passed to your
+callback function.</p>
+<pre><code class="lang-php">Flight::route(&#39;/&#39;, function($route){
+    // Array of HTTP methods matched against
+    $route-&gt;methods;
+
+    // Array of named parameters
+    $route-&gt;params;
+
+    // Matching regular expression
+    $route-&gt;regex;
+
+    // Contains the contents of any &#39;*&#39; used in the URL pattern
+    $route-&gt;splat;
+}, true);
+</code></pre>
+<h1 id="extending">Extending</h1>
+<p>Flight is designed to be an extensible framework. The framework comes with a set
+of default methods and components, but it allows you to map your own methods,
+register your own classes, or even override existing classes and methods.</p>
+<h2 id="mapping-methods">Mapping Methods</h2>
+<p>To map your own custom method, you use the <code>map</code> function:</p>
+<pre><code class="lang-php">// Map your method
+Flight::map(&#39;hello&#39;, function($name){
+    echo &quot;hello $name!&quot;;
+});
+
+// Call your custom method
+Flight::hello(&#39;Bob&#39;);
+</code></pre>
+<h2 id="registering-classes">Registering Classes</h2>
+<p>To register your own class, you use the <code>register</code> function:</p>
+<pre><code class="lang-php">// Register your class
+Flight::register(&#39;user&#39;, &#39;User&#39;);
+
+// Get an instance of your class
+$user = Flight::user();
+</code></pre>
+<p>The register method also allows you to pass along parameters to your class
+constructor. So when you load your custom class, it will come pre-initialized.
+You can define the constructor parameters by passing in an additional array.
+Here&#39;s an example of loading a database connection:</p>
+<pre><code class="lang-php">// Register class with constructor parameters
+Flight::register(&#39;db&#39;, &#39;PDO&#39;, array(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;));
+
+// Get an instance of your class
+// This will create an object with the defined parameters
+//
+//     new PDO(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;);
+//
+$db = Flight::db();
+</code></pre>
+<p>If you pass in an additional callback parameter, it will be executed immediately
+after class construction. This allows you to perform any set up procedures for your
+new object. The callback function takes one parameter, an instance of the new object.</p>
+<pre><code class="lang-php">// The callback will be passed the object that was constructed
+Flight::register(&#39;db&#39;, &#39;PDO&#39;, array(&#39;mysql:host=localhost;dbname=test&#39;,&#39;user&#39;,&#39;pass&#39;), function($db){
+    $db-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+});
+</code></pre>
+<p>By default, every time you load your class you will get a shared instance.
+To get a new instance of a class, simply pass in <code>false</code> as a parameter:</p>
+<pre><code class="lang-php">// Shared instance of the class
+$shared = Flight::db();
+
+// New instance of the class
+$new = Flight::db(false);
+</code></pre>
+<p>Keep in mind that mapped methods have precedence over registered classes. If you
+declare both using the same name, only the mapped method will be invoked.</p>
+<h1 id="overriding">Overriding</h1>
+<p>Flight allows you to override its default functionality to suit your own needs,
+without having to modify any code.</p>
+<p>For example, when Flight cannot match a URL to a route, it invokes the <code>notFound</code>
+method which sends a generic <code>HTTP 404</code> response. You can override this behavior
+by using the <code>map</code> method:</p>
+<pre><code class="lang-php">Flight::map(&#39;notFound&#39;, function(){
+    // Display custom 404 page
+    include &#39;errors/404.html&#39;;
+});
+</code></pre>
+<p>Flight also allows you to replace core components of the framework.
+For example you can replace the default Router class with your own custom class:</p>
+<pre><code class="lang-php">// Register your custom class
+Flight::register(&#39;router&#39;, &#39;MyRouter&#39;);
+
+// When Flight loads the Router instance, it will load your class
+$myrouter = Flight::router();
+</code></pre>
+<p>Framework methods like <code>map</code> and <code>register</code> however cannot be overridden. You will
+get an error if you try to do so.</p>
+<h1 id="filtering">Filtering</h1>
+<p>Flight allows you to filter methods before and after they are called. There are no
+predefined hooks you need to memorize. You can filter any of the default framework
+methods as well as any custom methods that you&#39;ve mapped.</p>
+<p>A filter function looks like this:</p>
+<pre><code class="lang-php">function(&amp;$params, &amp;$output) {
+    // Filter code
+}
+</code></pre>
+<p>Using the passed in variables you can manipulate the input parameters and/or the output.</p>
+<p>You can have a filter run before a method by doing:</p>
+<pre><code class="lang-php">Flight::before(&#39;start&#39;, function(&amp;$params, &amp;$output){
+    // Do something
+});
+</code></pre>
+<p>You can have a filter run after a method by doing:</p>
+<pre><code class="lang-php">Flight::after(&#39;start&#39;, function(&amp;$params, &amp;$output){
+    // Do something
+});
+</code></pre>
+<p>You can add as many filters as you want to any method. They will be called in the
+order that they are declared.</p>
+<p>Here&#39;s an example of the filtering process:</p>
+<pre><code class="lang-php">// Map a custom method
+Flight::map(&#39;hello&#39;, function($name){
+    return &quot;Hello, $name!&quot;;
+});
+
+// Add a before filter
+Flight::before(&#39;hello&#39;, function(&amp;$params, &amp;$output){
+    // Manipulate the parameter
+    $params[0] = &#39;Fred&#39;;
+});
+
+// Add an after filter
+Flight::after(&#39;hello&#39;, function(&amp;$params, &amp;$output){
+    // Manipulate the output
+    $output .= &quot; Have a nice day!&quot;;
+});
+
+// Invoke the custom method
+echo Flight::hello(&#39;Bob&#39;);
+</code></pre>
+<p>This should display:</p>
+<pre><code>Hello Fred! Have a nice day!
+</code></pre><p>If you have defined multiple filters, you can break the chain by returning <code>false</code>
+in any of your filter functions:</p>
+<pre><code class="lang-php">Flight::before(&#39;start&#39;, function(&amp;$params, &amp;$output){
+    echo &#39;one&#39;;
+});
+
+Flight::before(&#39;start&#39;, function(&amp;$params, &amp;$output){
+    echo &#39;two&#39;;
+
+    // This will end the chain
+    return false;
+});
+
+// This will not get called
+Flight::before(&#39;start&#39;, function(&amp;$params, &amp;$output){
+    echo &#39;three&#39;;
+});
+</code></pre>
+<p>Note, core methods such as <code>map</code> and <code>register</code> cannot be filtered because they
+are called directly and not invoked dynamically.</p>
+<h1 id="variables">Variables</h1>
+<p>Flight allows you to save variables so that they can be used anywhere in your application.</p>
+<pre><code class="lang-php">// Save your variable
+Flight::set(&#39;id&#39;, 123);
+
+// Elsewhere in your application
+$id = Flight::get(&#39;id&#39;);
+</code></pre>
+<p>To see if a variable has been set you can do:</p>
+<pre><code class="lang-php">if (Flight::has(&#39;id&#39;)) {
+     // Do something
+}
+</code></pre>
+<p>You can clear a variable by doing:</p>
+<pre><code class="lang-php">// Clears the id variable
+Flight::clear(&#39;id&#39;);
+
+// Clears all variables
+Flight::clear();
+</code></pre>
+<p>Flight also uses variables for configuration purposes.</p>
+<pre><code class="lang-php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre>
+<h1 id="views">Views</h1>
+<p>Flight provides some basic templating functionality by default. To display a view
+template call the <code>render</code> method with the name of the template file and optional
+template data:</p>
+<pre><code class="lang-php">Flight::render(&#39;hello.php&#39;, array(&#39;name&#39; =&gt; &#39;Bob&#39;));
+</code></pre>
+<p>The template data you pass in is automatically injected into the template and can
+be reference like a local variable. Template files are simply PHP files. If the
+content of the <code>hello.php</code> template file is:</p>
+<pre><code class="lang-php">Hello, &#39;&lt;?php echo $name; ?&gt;&#39;!
+</code></pre>
+<p>The output would be:</p>
+<pre><code>Hello, Bob!
+</code></pre><p>You can also manually set view variables by using the set method:</p>
+<pre><code class="lang-php">Flight::view()-&gt;set(&#39;name&#39;, &#39;Bob&#39;);
+</code></pre>
+<p>The variable <code>name</code> is now available across all your views. So you can simply do:</p>
+<pre><code class="lang-php">Flight::render(&#39;hello&#39;);
+</code></pre>
+<p>Note that when specifying the name of the template in the render method, you can
+leave out the <code>.php</code> extension.</p>
+<p>By default Flight will look for a <code>views</code> directory for template files. You can
+set an alternate path for your templates by setting the following config:</p>
+<pre><code class="lang-php">Flight::set(&#39;flight.views.path&#39;, &#39;/path/to/views&#39;);
+</code></pre>
+<h2 id="layouts">Layouts</h2>
+<p>It is common for websites to have a single layout template file with interchanging
+content. To render content to be used in a layout, you can pass in an optional
+parameter to the <code>render</code> method.</p>
+<pre><code class="lang-php">Flight::render(&#39;header&#39;, array(&#39;heading&#39; =&gt; &#39;Hello&#39;), &#39;header_content&#39;);
+Flight::render(&#39;body&#39;, array(&#39;body&#39; =&gt; &#39;World&#39;), &#39;body_content&#39;);
+</code></pre>
+<p>Your view will then have saved variables called <code>header_content</code> and <code>body_content</code>.
+You can then render your layout by doing:</p>
+<pre><code class="lang-php">Flight::render(&#39;layout&#39;, array(&#39;title&#39; =&gt; &#39;Home Page&#39;));
+</code></pre>
+<p>If the template files looks like this:</p>
+<p><code>header.php</code>:</p>
+<pre><code class="lang-php">&lt;h1&gt;&lt;?php echo $heading; ?&gt;&lt;/h1&gt;
+</code></pre>
+<p><code>body.php</code>:</p>
+<pre><code class="lang-php">&lt;div&gt;&lt;?php echo $body; ?&gt;&lt;/div&gt;
+</code></pre>
+<p><code>layout.php</code>:</p>
+<pre><code class="lang-php">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;?php echo $title; ?&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;?php echo $header_content; ?&gt;
+&lt;?php echo $body_content; ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The output would be:</p>
+<pre><code class="lang-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Home Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;div&gt;World&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="custom-views">Custom Views</h2>
+<p>Flight allows you to swap out the default view engine simply by registering your
+own view class. Here&#39;s how you would use the <a href="http://www.smarty.net/">Smarty</a>
+template engine for your views:</p>
+<pre><code class="lang-php">// Load Smarty library
+require &#39;./Smarty/libs/Smarty.class.php&#39;;
+
+// Register Smarty as the view class
+// Also pass a callback function to configure Smarty on load
+Flight::register(&#39;view&#39;, &#39;Smarty&#39;, array(), function($smarty){
+    $smarty-&gt;template_dir = &#39;./templates/&#39;;
+    $smarty-&gt;compile_dir = &#39;./templates_c/&#39;;
+    $smarty-&gt;config_dir = &#39;./config/&#39;;
+    $smarty-&gt;cache_dir = &#39;./cache/&#39;;
+});
+
+// Assign template data
+Flight::view()-&gt;assign(&#39;name&#39;, &#39;Bob&#39;);
+
+// Display the template
+Flight::view()-&gt;display(&#39;hello.tpl&#39;);
+</code></pre>
+<p>For completeness, you should also override Flight&#39;s default render method:</p>
+<pre><code class="lang-php">Flight::map(&#39;render&#39;, function($template, $data){
+    Flight::view()-&gt;assign($data);
+    Flight::view()-&gt;display($template);
+});
+</code></pre>
+<h1 id="error-handling">Error Handling</h1>
+<h2 id="errors-and-exceptions">Errors and Exceptions</h2>
+<p>All errors and exceptions are caught by Flight and passed to the <code>error</code> method.
+The default behavior is to send a generic <code>HTTP 500 Internal Server Error</code>
+response with some error information.</p>
+<p>You can override this behavior for your own needs:</p>
+<pre><code class="lang-php">Flight::map(&#39;error&#39;, function(Exception $ex){
+    // Handle error
+    echo $ex-&gt;getTraceAsString();
+});
+</code></pre>
+<p>By default errors are not logged to the web server. You can enable this by
+changing the config:</p>
+<pre><code class="lang-php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre>
+<h2 id="not-found">Not Found</h2>
+<p>When a URL can&#39;t be found, Flight calls the <code>notFound</code> method. The default
+behavior is to send an <code>HTTP 404 Not Found</code> response with a simple message.</p>
+<p>You can override this behavior for your own needs:</p>
+<pre><code class="lang-php">Flight::map(&#39;notFound&#39;, function(){
+    // Handle not found
+});
+</code></pre>
+<h1 id="redirects">Redirects</h1>
+<p>You can redirect the current request by using the <code>redirect</code> method and passing
+in a new URL:</p>
+<pre><code class="lang-php">Flight::redirect(&#39;/new/location&#39;);
+</code></pre>
+<p>By default Flight sends a HTTP 303 status code. You can optionally set a
+custom code:</p>
+<pre><code class="lang-php">Flight::redirect(&#39;/new/location&#39;, 401);
+</code></pre>
+<h1 id="requests">Requests</h1>
+<p>Flight encapsulates the HTTP request into a single object, which can be
+accessed by doing:</p>
+<pre><code class="lang-php">$request = Flight::request();
+</code></pre>
+<p>The request object provides the following properties:</p>
+<pre><code>url - The URL being requested
+base - The parent subdirectory of the URL
+method - The request method (GET, POST, PUT, DELETE)
+referrer - The referrer URL
+ip - IP address of the client
+ajax - Whether the request is an AJAX request
+scheme - The server protocol (http, https)
+user_agent - Browser information
+type - The content type
+length - The content length
+query - Query string parameters
+data - Post data or JSON data
+cookies - Cookie data
+files - Uploaded files
+secure - Whether the connection is secure
+accept - HTTP accept parameters
+proxy_ip - Proxy IP address of the client
+</code></pre><p>You can access the <code>query</code>, <code>data</code>, <code>cookies</code>, and <code>files</code> properties
+as arrays or objects.</p>
+<p>So, to get a query string parameter, you can do:</p>
+<pre><code class="lang-php">$id = Flight::request()-&gt;query[&#39;id&#39;];
+</code></pre>
+<p>Or you can do:</p>
+<pre><code class="lang-php">$id = Flight::request()-&gt;query-&gt;id;
+</code></pre>
+<h2 id="raw-request-body">RAW Request Body</h2>
+<p>To get the raw HTTP request body, for example when dealing with PUT requests, you can do:</p>
+<pre><code class="lang-php">$body = Flight::request()-&gt;getBody();
+</code></pre>
+<h2 id="json-input">JSON Input</h2>
+<p>If you send a request with the type <code>application/json</code> and the data <code>{&quot;id&quot;: 123}</code> it will be available
+from the <code>data</code> property:</p>
+<pre><code class="lang-php">$id = Flight::request()-&gt;data-&gt;id;
+</code></pre>
+<h1 id="http-caching">HTTP Caching</h1>
+<p>Flight provides built-in support for HTTP level caching. If the caching condition
+is met, Flight will return an HTTP <code>304 Not Modified</code> response. The next time the
+client requests the same resource, they will be prompted to use their locally
+cached version.</p>
+<h2 id="last-modified">Last-Modified</h2>
+<p>You can use the <code>lastModified</code> method and pass in a UNIX timestamp to set the date
+and time a page was last modified. The client will continue to use their cache until
+the last modified value is changed.</p>
+<pre><code class="lang-php">Flight::route(&#39;/news&#39;, function(){
+    Flight::lastModified(1234567890);
+    echo &#39;This content will be cached.&#39;;
+});
+</code></pre>
+<h2 id="etag">ETag</h2>
+<p><code>ETag</code> caching is similar to <code>Last-Modified</code>, except you can specify any id you
+want for the resource:</p>
+<pre><code class="lang-php">Flight::route(&#39;/news&#39;, function(){
+    Flight::etag(&#39;my-unique-id&#39;);
+    echo &#39;This content will be cached.&#39;;
+});
+</code></pre>
+<p>Keep in mind that calling either <code>lastModified</code> or <code>etag</code> will both set and check the
+cache value. If the cache value is the same between requests, Flight will immediately
+send an <code>HTTP 304</code> response and stop processing.</p>
+<h1 id="stopping">Stopping</h1>
+<p>You can stop the framework at any point by calling the <code>halt</code> method:</p>
+<pre><code class="lang-php">Flight::halt();
+</code></pre>
+<p>You can also specify an optional <code>HTTP</code> status code and message:</p>
+<pre><code class="lang-php">Flight::halt(200, &#39;Be right back...&#39;);
+</code></pre>
+<p>Calling <code>halt</code> will discard any response content up to that point. If you want to stop
+the framework and output the current response, use the <code>stop</code> method:</p>
+<pre><code class="lang-php">Flight::stop();
+</code></pre>
+<h1 id="json">JSON</h1>
+<p>Flight provides support for sending JSON and JSONP responses. To send a JSON response you
+pass some data to be JSON encoded:</p>
+<pre><code class="lang-php">Flight::json(array(&#39;id&#39; =&gt; 123));
+</code></pre>
+<p>For JSONP requests you, can optionally pass in the query parameter name you are
+using to define your callback function:</p>
+<pre><code class="lang-php">Flight::jsonp(array(&#39;id&#39; =&gt; 123), &#39;q&#39;);
+</code></pre>
+<p>So, when making a GET request using <code>?q=my_func</code>, you should receive the output:</p>
+<pre><code>my_func({&quot;id&quot;:123});
+</code></pre><p>If you don&#39;t pass in a query parameter name it will default to <code>jsonp</code>.</p>
+<h1 id="configuration">Configuration</h1>
+<p>You can customize certain behaviors of Flight by setting configuration values
+through the <code>set</code> method.</p>
+<pre><code class="lang-php">Flight::set(&#39;flight.log_errors&#39;, true);
+</code></pre>
+<p>The following is a list of all the available configuration settings:</p>
+<pre><code>flight.base_url - Override the base url of the request. (default: null)
+flight.case_sensitive - Case sensitive matching for URLs. (default: false)
+flight.handle_errors - Allow Flight to handle all errors internally. (default: true)
+flight.log_errors - Log errors to the web server&#39;s error log file. (default: false)
+flight.views.path - Directory containing view template files. (default: ./views)
+flight.views.extension - View template file extension. (default: .php)
+</code></pre><h1 id="framework-methods">Framework Methods</h1>
+<p>Flight is designed to be easy to use and understand. The following is the complete
+set of methods for the framework. It consists of core methods, which are regular
+static methods, and extensible methods, which are mapped methods that can be filtered
+or overridden.</p>
+<h2 id="core-methods">Core Methods</h2>
+<pre><code class="lang-php">Flight::map($name, $callback) // Creates a custom framework method.
+Flight::register($name, $class, [$params], [$callback]) // Registers a class to a framework method.
+Flight::before($name, $callback) // Adds a filter before a framework method.
+Flight::after($name, $callback) // Adds a filter after a framework method.
+Flight::path($path) // Adds a path for autoloading classes.
+Flight::get($key) // Gets a variable.
+Flight::set($key, $value) // Sets a variable.
+Flight::has($key) // Checks if a variable is set.
+Flight::clear([$key]) // Clears a variable.
+Flight::init() // Initializes the framework to its default settings.
+Flight::app() // Gets the application object instance
+</code></pre>
+<h2 id="extensible-methods">Extensible Methods</h2>
+<pre><code class="lang-php">Flight::start() // Starts the framework.
+Flight::stop() // Stops the framework and sends a response.
+Flight::halt([$code], [$message]) // Stop the framework with an optional status code and message.
+Flight::route($pattern, $callback) // Maps a URL pattern to a callback.
+Flight::redirect($url, [$code]) // Redirects to another URL.
+Flight::render($file, [$data], [$key]) // Renders a template file.
+Flight::error($exception) // Sends an HTTP 500 response.
+Flight::notFound() // Sends an HTTP 404 response.
+Flight::etag($id, [$type]) // Performs ETag HTTP caching.
+Flight::lastModified($time) // Performs last modified HTTP caching.
+Flight::json($data, [$code], [$encode], [$charset], [$option]) // Sends a JSON response.
+Flight::jsonp($data, [$param], [$code], [$encode], [$charset], [$option]) // Sends a JSONP response.
+</code></pre>
+<p>Any custom methods added with <code>map</code> and <code>register</code> can also be filtered.</p>
+<h1 id="framework-instance">Framework Instance</h1>
+<p>Instead of running Flight as a global static class, you can optionally run it
+as an object instance.</p>
+<pre><code class="lang-php">require &#39;flight/autoload.php&#39;;
+
+use flight\Engine;
+
+$app = new Engine();
+
+$app-&gt;route(&#39;/&#39;, function(){
+    echo &#39;hello world!&#39;;
+});
+
+$app-&gt;start();
+</code></pre>
+<p>So instead of calling the static method, you would call the instance method with
+the same name on the Engine object.</p>
+
+      </body>
+    </html>

@@ -1,0 +1,140 @@
+// => portfolio projects
+.projects {
+    &-project {
+        margin-bottom: 1.5rem;
+        img {
+            width: 100%;
+        }
+    }
+    &-more {
+        &__list {
+            li {
+                margin: .5rem 1rem;
+            }
+        }
+    }
+}
+
+.projects,
+.project-gallery {
+    .breadcrumb {
+        background: none;
+        &-item {
+            float: none;
+            color: $text-color;
+            &.active {
+                color: $base-color;
+            }
+            &:hover {
+                color: $base-color;
+            }
+        }
+    }
+}
+
+.project-gallery {
+    h3 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 1rem;
+    }
+}
+
+.before-after-gallery {
+    .owl-prev,
+    .owl-next {
+        position: absolute;
+        top: 45%;
+        font-size: 1.5rem;
+    }
+    .owl-prev {
+        left: -100px;
+    }
+    .owl-next {
+        right: -100px;
+    }
+    .owl-dots {
+        text-align: center;
+        margin-top: 5px;
+    }
+    .owl-dot {
+        display: inline-block;
+        vertical-align: middle;
+        width: 15px;
+        height: 15px;
+        background: #000;
+        border-radius: 50%;
+        margin: 0 0.2rem;
+        &.active {
+            background: $base-color;
+        }
+    }
+}
+
+.after-gallery {
+    .owl-nav {
+        text-align: right;
+        margin: .5rem;
+    }
+    .owl-prev,
+    .owl-next {
+        display: inline-block;
+        vertical-align: middle;
+        top: 45%;
+        background: #fff;
+        position: absolute;
+        padding: 1rem;
+    }
+    .owl-prev {
+        left: 0;
+    }
+    .owl-next {
+        right: 0;
+    }
+    .owl-dots {
+        counter-reset: slides-num;
+        /* Initialize counter. */
+        position: relative;
+        float: right;
+        // width: 300px;
+        margin-top: 5px;
+        color: #797979;
+        // font-family: $heading-font-family;
+        // font-family: sans-serif;
+        &:after {
+            content: "\00a0\00a0 / \00a0" counter(slides-num);
+            display: inline-block;
+            font-size: 20px;
+            vertical-align: middle;
+            padding-left: 20px;
+            font-size: $base-font-size + 6;
+        }
+    }
+    .owl-dot {
+        display: inline-block;
+        counter-increment: slides-num;
+        /* Increment counter */
+        // margin: 0 4px;
+        span {
+            display: none;
+        }
+        &.active {
+            &:before {
+                content: counter(slides-num);
+                /* Use the same counter to get current item. */
+                display: inline-block;
+                vertical-align: middle;
+                font-size: $base-font-size + 6;
+                position: absolute;
+                left: 0;
+                top: 0;
+                // margin-right: 20px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .img-fluid {
+        width: 100%;
+    }
+}

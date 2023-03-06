@@ -1,0 +1,49 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h1 id="small-website-boilerplate-micro-framework-">Small Website Boilerplate (micro framework)</h1>
+<p>This boilerplate is designed to build fast and organized websites with some essential tools</p>
+<p>1) After cloning please run <strong>composer update</strong> to download packages used by framework</p>
+<p>2) To generate sitemap visit <strong>/generate-sitemap</strong> url. Data for the sitemap is located in <strong>/App/meta.php</strong></p>
+<p>3) Edit config file located in <strong>/App/config.php</strong></p>
+<p><strong>Note:</strong> If you need to use it in a subdirectory uncomment the line <em>RewriteBase /subdir/</em> in <strong>.htaccess</strong> file</p>
+<h3 id="some-cool-stuff-included">Some cool stuff included</h3>
+<ul>
+<li>Built on top of the Flight framework <a href="http://flightphp.com/">http://flightphp.com/</a></li>
+<li>Mailing system <a href="https://github.com/PHPMailer/PHPMailer">https://github.com/PHPMailer/PHPMailer</a></li>
+<li>Form Validator <a href="https://github.com/Wixel/GUMP">https://github.com/Wixel/GUMP</a></li>
+<li>Database toolkit <a href="https://github.com/mikecao/sparrow">https://github.com/mikecao/sparrow</a></li>
+<li>Sitemap generator <a href="https://github.com/evert/sitemap-php/">https://github.com/evert/sitemap-php/</a></li>
+<li>CSS, JS minify tool <a href="https://github.com/matthiasmullie/minify">https://github.com/matthiasmullie/minify</a></li>
+<li>Bootstrap v3.3.6 framework <a href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
+<li>Font Awesome <a href="https://fortawesome.github.io/Font-Awesome/">https://fortawesome.github.io/Font-Awesome/</a></li>
+<li>Owl Carousel 2 <a href="http://www.owlcarousel.owlgraphic.com/">http://www.owlcarousel.owlgraphic.com/</a></li>
+<li>Animate CSS <a href="http://daneden.github.io/animate.css/">http://daneden.github.io/animate.css/</a></li>
+<li>Wordpress integration</li>
+<li>...and many more</li>
+</ul>
+<h3 id="wordpress-integration">Wordpress Integration</h3>
+<ul>
+<li>Enable/Configure wordpress from <strong>/App/config.php</strong> file</li>
+<li>Install wordpress</li>
+<li>Access integrated blog <a href="http://example.com/blog/">http://example.com/blog/</a></li>
+</ul>
+<h3 id="helper-functions">Helper Functions</h3>
+<p><strong>starBar()</strong>  - show star rating on the page</p>
+<p><strong>url(&#39;somepage&#39;)</strong> - /somepage</p>
+<p><strong>isHome()</strong> - returns bool</p>
+<p><strong>phone(true, true)</strong> - prints phone number from the config file, accepts two <em>optional</em> bool values, first bool converts phone to format 333-444-5555 and second bool converts the phone number to the link</p>
+<p><strong>assets(&#39;file/from/assets/folder&#39;)</strong> - returns path to the file from <em>assets</em> folder</p>
+<p><strong>partial(filename, array(&#39;apple&#39; =&gt; &#39;red&#39;))</strong> - includes file from /views/partials folder, accepts file name without <strong>.php</strong>, second value <em>array()</em> passed is optional, if present than it will load data to the partial file <em>$apple = &#39;red&#39;;</em></p>
+<p><strong>currentUrl()</strong> - returns current URL <em><a href="http://example.com/somepage">http://example.com/somepage</a></em></p>
+<p><strong>pageBodyClass()</strong> - returns page class based on page URL</p>
+<p><strong>Flight::database()</strong> - loads <a href="https://github.com/mikecao/sparrow">https://github.com/mikecao/sparrow</a> class and operates on <em>/App/database/data.db</em> file</p>
+<p><strong>Flight::get(&#39;key_from config.php&#39;)</strong> - returns value of config key</p>
+<h3 id="other-notes">Other notes</h3>
+<p>We also want to keep track of 404 page, so we have log system implementet for that in (/App/log/404.txt). The cool thing is that if this file reaches 3 MB it will clear itself and send attachment to the dev email specified in config file.</p>
+
+      </body>
+    </html>

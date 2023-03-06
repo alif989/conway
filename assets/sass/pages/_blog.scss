@@ -1,0 +1,127 @@
+.blog-wrapper {
+    h2 {
+        font-size: $base-font-size * 1.8;
+    }
+}
+
+.separator {
+    color: $base-color;
+}
+
+.pagination li {
+    margin-right: .5rem;
+    display: inline-block;
+    a {
+        background: $base-color;
+        padding: .5rem 1rem;
+        color: white;
+    }
+}
+.search-form 
+span.screen-reader-text{
+    display: block;
+}
+.search-submit{
+    // @extend .button; 
+    // @extend .button_primary;
+    @extend %button;
+    padding: 0.25rem 0.5rem 0.25rem;
+    margin-bottom: 2rem;
+}
+.alignright{
+    float: right;
+    margin-left: 1rem;
+    height: auto;
+}
+.alignleft{
+    float: left;
+    margin-right: 1rem;
+    height: auto;
+}
+.aligncenter{
+    float: none;
+    margin: 1rem auto;
+    text-align: center;
+    height: auto;
+}
+// .services {
+//     .top-services {
+//         position: relative;
+//         margin-top: 0;
+//     }
+//     .sidebar-services li {
+//         width: 30%;
+//         display: inline-block;
+//         margin-right: 3%;
+//         @include media-breakpoint-down(sm) {
+//             width: 100%;
+//             margin-right: 0%;
+//         }
+//     }
+// }
+.blog-page  {
+    .breadcrumbs{
+        padding-left: 0 !important;
+    }
+    .innerPage-header{
+        padding-top: 14em;
+    }
+    .innerPage{
+    ol,ul{
+        padding-left: 1.2rem;
+    }
+    ol{
+        li{
+            list-style: decimal;
+        }
+    }
+      ul{ 
+        li{
+            list-style: disc;
+        }
+    }
+    .blog-list .entry-title{
+        font-size:$base-font-size * 1.6;
+    }
+    .entry-title {
+        color: #2b8dd8;
+        font-size:$base-font-size * 2;
+    }
+    p,li{
+        font-size: $base-font-size + 2;
+    }
+    }
+    a{
+        color:#2b8dd8;
+        &:hover{
+            color: $highlight;
+        }
+    }
+    .footer a{
+        color:#fff;
+    }
+}
+.blog-page aside .widget{
+    margin-bottom: 1rem;; 
+} 
+.blog-page aside .widget_search input[type=search]
+{
+    width: 75%;
+    padding: 0.3rem;
+    margin-right: 3%;
+}
+.blog-page aside .widget_search  button{
+ 
+    font-size: 0;
+    &:before {
+        content: "\f002";
+        font-family: 'Font Awesome 5 Light';
+        font-size: 1rem;
+        background:$highlight;
+        color: #fff;
+        padding: 0.75rem 1rem;
+    }
+    &:hover{
+        background:$base-color;
+    }
+}

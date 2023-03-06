@@ -1,0 +1,119 @@
+@import '../../font-awesome/scss/variables'; //only for awesome fonts
+//   $==>fonts 
+@font-face {
+    font-family: 'BEBASNEUE-BOOK';
+    src: url('../fonts/BEBASNEUE-BOOK.OTF');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BEBASNEUE-REGULAR';
+    src: url('../fonts/BEBASNEUE-REGULAR.OTF');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BEBASNEUE';
+    src: url('../fonts/BEBASNEUE.OTF');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('../fonts/Poppins-Light.otf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: 900;
+    src: url('#{$fa-font-path}/fontawesome-brands-900.eot');
+    src: url('#{$fa-font-path}/fontawesome-brands-900.eot?#iefix') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-brands-900.woff2') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-brands-900.woff') format('woff'),
+    url('#{$fa-font-path}/fontawesome-brands-900.ttf') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-brands-900.svg#fontawesome') format('svg');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Light';
+    font-style: normal;
+    font-weight: 300;
+    src: url('#{$fa-font-path}/fontawesome-light-300.eot');
+    src: url('#{$fa-font-path}/fontawesome-light-300.eot?#iefix') format('embedded-opentype'),
+    url('#{$fa-font-path}/fontawesome-light-300.woff2') format('woff2'),
+    url('#{$fa-font-path}/fontawesome-light-300.woff') format('woff'),
+    url('#{$fa-font-path}/fontawesome-light-300.ttf') format('truetype'),
+    url('#{$fa-font-path}/fontawesome-light-300.svg#fontawesome') format('svg');
+    font-display: swap;
+}
+
+// @font-face {
+//     font-family: 'Font Awesome 5 Solid';
+//     font-style: normal;
+//     font-weight: 900;
+//     src: url('../#{$fa-font-path}/fontawesome-solid-900.eot');
+//     src: url('../#{$fa-font-path}/fontawesome-solid-900.eot?#iefix') format('embedded-opentype'),
+//     url('../#{$fa-font-path}/fontawesome-solid-900.woff2') format('woff2'),
+//     url('../#{$fa-font-path}/fontawesome-solid-900.woff') format('woff'),
+//     url('../#{$fa-font-path}/fontawesome-solid-900.ttf') format('truetype'),
+//     url('../#{$fa-font-path}/fontawesome-solid-900.svg#fontawesome') format('svg');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'BEBASNEUE-BOOK';
+//     src: url('../fonts/BEBASNEUE-BOOK.OTF');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'BEBASNEUE-REGULAR';
+//     src: url('../fonts/BEBASNEUE-REGULAR.OTF');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'BEBASNEUE';
+//     src: url('../fonts/BEBASNEUE.OTF');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Poppins-Regular';
+//     src: url('../fonts/Poppins-Regular.otf');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Poppins-Light';
+//     src: url('../fonts/Poppins-Light.otf');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Font Awesome 5 Brands';
+//     font-style: normal;
+//     font-weight: 900;
+//     src: url('#{$fa-font-path}/fontawesome-brands-900.eot');
+//     src: url('#{$fa-font-path}/fontawesome-brands-900.eot?#iefix') format('embedded-opentype'),
+//     url('#{$fa-font-path}/fontawesome-brands-900.woff2') format('woff2'),
+//     url('#{$fa-font-path}/fontawesome-brands-900.woff') format('woff'),
+//     url('#{$fa-font-path}/fontawesome-brands-900.ttf') format('truetype'),
+//     url('#{$fa-font-path}/fontawesome-brands-900.svg#fontawesome') format('svg');
+//     font-display: swap;
+// }
+// @font-face {
+//     font-family: 'Font Awesome 5 Light';
+//     font-style: normal;
+//     font-weight: 300;
+//     src: url('#{$fa-font-path}/fontawesome-light-300.eot');
+//     src: url('#{$fa-font-path}/fontawesome-light-300.eot?#iefix') format('embedded-opentype'),
+//     url('#{$fa-font-path}/fontawesome-light-300.woff2') format('woff2'),
+//     url('#{$fa-font-path}/fontawesome-light-300.woff') format('woff'),
+//     url('#{$fa-font-path}/fontawesome-light-300.ttf') format('truetype'),
+//     url('#{$fa-font-path}/fontawesome-light-300.svg#fontawesome') format('svg');
+//     font-display: swap;
+// }

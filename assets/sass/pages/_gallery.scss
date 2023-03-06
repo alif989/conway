@@ -1,0 +1,90 @@
+// ==> gallery page styles 
+
+.galleryPage {
+  padding-top: 40px;
+  &-text {
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  // gallery typography
+  .cbp-l-filters-buttonCenter .cbp-filter-counter,
+  .cbp-l-filters-buttonCenter .cbp-filter-item,
+  .cbp-l-loadMore-button .cbp-l-loadMore-link, .cbp-l-loadMore-button .cbp-l-loadMore-button-link {
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+
+      
+  }
+  .cbp-l-loadMore-button .cbp-l-loadMore-link, .cbp-l-loadMore-button .cbp-l-loadMore-button-link {
+    @extend .button;
+    @extend .base;
+    @extend .button_transparent;
+    line-height: $base-line-height;
+    &:hover {
+      color: #000;
+    }
+  }
+  .cbp-slider-next, .cbp-slider-prev {
+    background: #000;
+
+  }
+  .cbp-item-wrapper a {
+    transition: none;
+  }
+  .cbp-l-filters-buttonCenter .cbp-filter-item {
+
+    margin: 0 10px;
+    padding: 2px 16px;
+    background: none;
+    border: 0;
+    font-family: $heading-font-family;
+    color: #959595;
+    font-size: $base-font-size + 3;
+    i {
+      @include transform(rotate(90deg));
+      margin-right: 7px;
+      color: $base-color;
+    }
+
+  }
+  .cbp-l-grid-mosaic-flat .cbp-l-caption-title {
+    font: $base-font-weight 14px/21px $base-font-family;
+  }
+  .cbp-popup-lightbox-title {
+    font: $base-font-weight 12px/18px $base-font-family;
+  }
+
+
+  // gallery styling
+  .cbp:after,
+  .cbp-lazyload:after,
+  .cbp-popup-loadingBox:after,
+  .cbp-popup-singlePageInline:after {
+    border-left: 3px solid rgba(40,64,209,0.35);
+    border-right: 3px solid rgba(40,64,209,0.35);
+    border-bottom: 3px solid rgba(40,64,209,0.35);
+    border-top: 3px solid rgba(40,88,200,0.65);
+  }
+
+  .cbp-l-filters-buttonCenter .cbp-filter-item.cbp-filter-item-active {
+    color: #000;
+    i {
+      &:before {
+        content: "\f219";
+        font-family: $icon-solid;
+      }
+    }
+  }
+  .cbp-l-filters-buttonCenter .cbp-filter-counter {
+    background-color: $base-color;
+  }
+  .cbp-l-filters-buttonCenter .cbp-filter-counter:after {
+    border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid $base-color;
+  }
+  .cbp-l-grid-mosaic-flat .cbp-caption-activeWrap {
+    background-color: rgba(0,0,0,0.7);
+  }
+}

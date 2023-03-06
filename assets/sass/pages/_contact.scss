@@ -1,0 +1,16 @@
+// $==> contact page
+.contact-title {
+    color: $base-color;
+}
+
+.contact-form {
+    textarea.form-control {
+        border: 1px solid #000;
+    }
+    h2 {
+        color: #959595;
+        i {
+            color: $base-color;
+        }
+    }
+}

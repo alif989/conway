@@ -1,0 +1,174 @@
+// $======> variables <======$ 
+// $==> font weights
+// Navigation - Bebas Neue (Regular)
+// Title - Bebas Neue (Regular) and ( Bebas Neue- Book) for title on top 
+// Text - Poppins (Regular)
+// Buttons - Poppins (Light)
+$light: 300;
+$regular: 400;
+$bold: 700;
+$text-color: #333;
+// $==> base font
+$base-font-family:'Poppins-Light',
+sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 16px;
+$base-line-height: 1.6;
+// $==> FontAwesome Icon Fonts
+$icon-solid: 'Font Awesome 5 Solid';
+$icon-reg: 'Font Awesome 5 Regular';
+$icon-light: 'Font Awesome 5 Light';
+// $==> fixed font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+// $==> headings 
+$extraLight-font-family: 'Poppins-Light',
+sans-serif;
+$nav-font-family: 'BEBASNEUE-REGULAR',
+sans-serif;
+$title-font-family: 'BEBASNEUE',
+sans-serif;
+$lightTitle-font-family: 'BEBASNEUE-BOOK',
+sans-serif;
+$heading-font-family: $title-font-family;
+$light-font-family: 'BEBASNEUE-BOOK';
+$heading-font-weight: $regular;
+$heading-font-style: normal;
+// $==> colors
+$highlight:#bf2516;
+$highlight2:#d81b2f;
+$base-color:#bf2516;
+$button-highlight-color:#bf2516;
+$base-color-secondary: #e3e3e3;
+$base-header-bg-color: transparent;
+$base-footer-bg-color: #edd270;
+$base-color-dark: #460700; // $==> button variables
+$base-color-light:#a32b1c;
+$base-dark-black: #171717;
+$button-padding:0 0 0 1rem;
+$button-font-size: $base-font-size;
+$button-bgcolor-primary: #bf2516;
+$button-bgcolor-secondary: #a32b1c;
+$button-bgcolor-tertiary: #630e05;
+$button-border-width: 1px;
+$button-color: $base-color-light;
+// $======> mixins <======$ 
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+// example - @include animation(pulse 5s infinite);
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+// example - @include transition(all/width/opacity 0.5s);
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// example - @include opacity(0.8);
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// example - @include pseudo;
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+// example - @include input-placeholder {color: red;}
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+// example - @include push--auto;
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// example - @include center-block;
+@mixin center-vertically {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// example - @include center-vertically;
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// example - @include clearfix;
+@mixin gradient($start-color, $end-color, $orientation) {
+    background: $start-color;
+    @if $orientation=='vertical' {
+        background: -webkit-linear-gradient(top, $start-color, $end-color);
+        background: linear-gradient(to bottom, $start-color, $end-color);
+    }
+    @else if $orientation=='horizontal' {
+        background: -webkit-linear-gradient(left, $start-color, $end-color);
+        background: linear-gradient(to right, $start-color, $end-color);
+    }
+    @else {
+        background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+        background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+// example - @include gradient(#07c, #06f, vertical);
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+        background: darken($bg, 8%);
+        transition: all 0.3s ease;
+    }
+    &:active {
+        background: darken($bg, 25%);
+    }
+}

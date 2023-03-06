@@ -1,0 +1,80 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>README.md</title>
+      </head>
+      <body>
+        <h2 id="what-is-sitemap-php-">What is sitemap-php ?</h2>
+<p>Fast and lightweight class for generating Google sitemap XML files and index of sitemap files. Written on PHP and uses XMLWriter extension (wrapper for libxml xmlWriter API) for creating XML files. XMLWriter extension is enabled by default in PHP 5 &gt;= 5.1.2. If you having more than 50000 url, it splits items to seperated files. <em>(In benchmarks, 1.000.000 url was generating in 8 seconds)</em></p>
+<p>This is a slightly modified version of the original. The Sitemap class is now added to a &#39;SitemapPHP&#39; namespace, and a composer document has been added.</p>
+<h2 id="how-to-use">How to use</h2>
+<p>Include Sitemap.php file to your PHP document and call Sitemap class with your base domain.</p>
+<pre><code>include &#39;src/SitemapPHP/Sitemap.php&#39;;
+
+use SitemapPHP\Sitemap;
+
+$sitemap = new Sitemap(&#39;http://example.com&#39;);    
+</code></pre><p>Now, we need to define path for saving XML files. This can be relative like <code>xmls</code> or absolute <code>/path/to/your/folder</code> and <em>must be a writable folder</em>. In default it uses same folder with your script.</p>
+<pre><code>$sitemap-&gt;setPath(&#39;xmls/&#39;);
+</code></pre><p>Generated XML file names defaulted to <code>sitemap-*.xml</code>, you can customize prefix of filenames with <code>setFilename</code> method.</p>
+<pre><code>$sitemap-&gt;setFilename(&#39;customsitemap&#39;);
+</code></pre><p>We&#39;ll add sitemap url&#39;s with <code>addItem</code> method. In this method, only first parameter (location) is required.</p>
+<pre><code>$sitemap-&gt;addItem(&#39;/&#39;, &#39;1.0&#39;, &#39;daily&#39;, &#39;Today&#39;);
+$sitemap-&gt;addItem(&#39;/about&#39;, &#39;0.8&#39;, &#39;monthly&#39;, &#39;Jun 25&#39;);
+$sitemap-&gt;addItem(&#39;/contact&#39;, &#39;0.6&#39;, &#39;yearly&#39;, &#39;14-12-2009&#39;);
+$sitemap-&gt;addItem(&#39;/otherpage&#39;);
+</code></pre><p>w/ method chaining.</p>
+<pre><code>$sitemap-&gt;addItem(&#39;/projects&#39;, &#39;0.8&#39;)-&gt;addItem(&#39;/somepage&#39;)-&gt;addItem(&#39;/hiddenpage&#39;, &#39;0.4&#39;, &#39;yearly&#39;, &#39;01-01-2011&#39;)-&gt;addItem(&#39;/rss&#39;);
+</code></pre><p>from a sql result, or whatever.</p>
+<pre><code>$query = Doctrine_Query::create()
+                -&gt;select(&#39;p.created_at, p.slug&#39;)
+                -&gt;from(&#39;Posts p&#39;)
+                -&gt;orderBy(&#39;p.id DESC&#39;)
+                -&gt;useResultCache(true);
+$posts =  $query-&gt;fetchArray(array(), Doctrine_Core::HYDRATE_ARRAY);
+foreach ($posts as $post) {
+    $sitemap-&gt;addItem(&#39;/post/&#39; . $post[&#39;slug&#39;], &#39;0.6&#39;, &#39;weekly&#39;, $post[&#39;created_at&#39;]);
+}
+</code></pre><p>If you need to change domain for sitemap instance, you can override it via <code>setDomain</code> method.</p>
+<pre><code>$sitemap-&gt;setDomain(&#39;http://blog.example.com&#39;);
+</code></pre><p>Finally we create index for sitemap files. This method also closes tags of latest generated xml file.</p>
+<pre><code>$sitemap-&gt;createSitemapIndex(&#39;http://example.com/sitemap/&#39;, &#39;Today&#39;);
+</code></pre><p>When you run your script, it generates and saves XML files to given path.</p>
+<p>sitemap-0.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
+ &lt;url&gt;
+  &lt;loc&gt;http://example.com/&lt;/loc&gt;
+  &lt;priority&gt;1.0&lt;/priority&gt;
+  &lt;changefreq&gt;daily&lt;/changefreq&gt;
+  &lt;lastmod&gt;2011-04-07&lt;/lastmod&gt;
+ &lt;/url&gt;
+ &lt;url&gt;
+  &lt;loc&gt;http://example.com/about&lt;/loc&gt;
+  &lt;priority&gt;0.8&lt;/priority&gt;
+  &lt;changefreq&gt;monthly&lt;/changefreq&gt;
+  &lt;lastmod&gt;2011-06-25&lt;/lastmod&gt;
+ &lt;/url&gt;
+ &lt;url&gt;
+  &lt;loc&gt;http://example.com/contact&lt;/loc&gt;
+  &lt;priority&gt;0.6&lt;/priority&gt;
+  &lt;changefreq&gt;yearly&lt;/changefreq&gt;
+  &lt;lastmod&gt;2009-12-14&lt;/lastmod&gt;
+ &lt;/url&gt;
+ &lt;url&gt;
+  &lt;loc&gt;http://example.com/otherpage&lt;/loc&gt;
+  &lt;priority&gt;0.5&lt;/priority&gt;
+ &lt;/url&gt;
+&lt;/urlset&gt;
+</code></pre><p>sitemap-index.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;sitemapindex xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;
+ &lt;sitemap&gt;
+  &lt;loc&gt;http://example.com/sitemap/sitemap-0.xml&lt;/loc&gt;
+  &lt;lastmod&gt;2011-04-07&lt;/lastmod&gt;
+ &lt;/sitemap&gt;
+&lt;/sitemapindex&gt;
+</code></pre><p>You need to submit sitemap-index.xml to Google Sitemaps.</p>
+
+      </body>
+    </html>

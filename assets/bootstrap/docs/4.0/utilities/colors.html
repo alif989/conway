@@ -1,0 +1,48 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>colors.md</title>
+      </head>
+      <body>
+        <hr>
+<p>layout: docs
+title: Colors
+description: Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.
+group: utilities</p>
+<h2 id="toc-true">toc: true</h2>
+<h2 id="color">Color</h2>
+<p>{% example html %}
+{% for color in site.data.theme-colors %}</p>
+<p>&lt;p class=&quot;text-{{ color.name }}{% if color.name == &quot;light&quot; %} bg-dark{% endif %}&quot;&gt;.text-{{ color.name }}</p>{% endfor %}</p>
+<p><p class="text-muted">.text-muted</p></p>
+<p><p class="text-white bg-dark">.text-white</p>
+{% endexample %}</p>
+<p>Contextual text classes also work well on anchors with the provided hover and focus states. <strong>Note that the <code>.text-white</code> and <code>.text-muted</code> class has no link styling.</strong></p>
+<p>{% example html %}
+{% for color in site.data.theme-colors %}</p>
+<p><p>&lt;a href=&quot;#&quot; class=&quot;text-{{ color.name }}{% if color.name == &quot;light&quot; %} bg-dark{% endif %}&quot;&gt;{{ color.name | capitalize }} link</a></p>{% endfor %}</p>
+<p><p><a href="#" class="text-muted">Muted link</a></p></p>
+<p><p><a href="#" class="text-white bg-dark">White link</a></p>
+{% endexample %}</p>
+<h2 id="background-color">Background color</h2>
+<p>Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes. Background utilities <strong>do not set <code>color</code></strong>, so in some cases you&#39;ll want to use <code>.text-*</code> utilities.</p>
+<p>{% example html %}
+{% for color in site.data.theme-colors %}</p>
+<p>&lt;div class=&quot;p-3 mb-2 bg-{{ color.name }} {% if color.name == &quot;light&quot; or color.name == &quot;warning&quot; %}text-dark{% else %}text-white{% endif %}&quot;&gt;.bg-{{ color.name }}</div>{% endfor %}</p>
+<p><div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+{% endexample %}</p>
+<h2 id="background-gradient">Background gradient</h2>
+<p>When <code>$enable-gradients</code> is set to true, you&#39;ll be able to use <code>.bg-gradient-</code> utility classes. <strong>By default, <code>$enable-gradients</code> is disabled and the example below is intentionally broken.</strong> This is done for easier customization from the moment you start using Bootstrap. <a href="{{ site.baseurl }}/docs/{{ site.docs_version }}/getting-started/theming/#sass-options">Learn about our Sass options</a> to enable these classes and more.</p>
+<p>{% example html %}
+{% for color in site.data.theme-colors %}</p>
+<p>&lt;div class=&quot;p-3 mb-2 bg-gradient-{{ color.name }} {% if color.name == &quot;light&quot; or color.name == &quot;warning&quot; %}text-dark{% else %}text-white{% endif %}&quot;&gt;.bg-gradient-{{ color.name }}</div>{% endfor %}
+{% endexample %}</p>
+<p>{% callout info %}</p>
+<h4 id="dealing-with-specificity">Dealing with specificity</h4>
+<p>Sometimes contextual classes cannot be applied due to the specificity of another selector. In some cases, a sufficient workaround is to wrap your element&#39;s content in a <code>&lt;div&gt;</code> with the class.
+{% endcallout %}</p>
+<p>{% capture callout-include %}{% include callout-warning-color-assistive-technologies.md %}{% endcapture %}
+{{ callout-include | markdownify }}</p>
+
+      </body>
+    </html>

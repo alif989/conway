@@ -1,0 +1,22 @@
+// $==> main sass file 
+@charset 'utf-8';
+// $==> third party 
+@import "bootstrap";
+@import "vendor/font-awesome";
+// $==> base  
+@import "partials/base"; 
+// $==> partials 
+@import "partials/buttons";
+@import "partials/typography";
+// $==> components  
+@import "components/general"; 
+@import "components/header";
+@import "components/footer";
+// $==> pages 
+@import "pages/home";
+@import "pages/about";
+@import "pages/contact";
+// @import "pages/gallery";
+//@import "pages/portfolio";
+@import "pages/blog"; 
+@import "partials/fonts"; 

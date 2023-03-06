@@ -1,0 +1,43 @@
+<html>
+      <head>
+        <meta charset="UTF-8">
+        <title>code.md</title>
+      </head>
+      <body>
+        <hr>
+<p>layout: docs
+title: Code
+description: Documentation and examples for displaying inline and multiline blocks of code with Bootstrap.
+group: content</p>
+<h2 id="toc-true">toc: true</h2>
+<h2 id="inline-code">Inline code</h2>
+<p>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape HTML angle brackets.</p>
+<p>{% example html %}
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+{% endexample %}</p>
+<h2 id="code-blocks">Code blocks</h2>
+<p>Use <code>&lt;pre&gt;</code>s for multiple lines of code. Once again, be sure to escape any angle brackets in the code for proper rendering. You may optionally add the <code>.pre-scrollable</code> class, which will set a max-height of 350px and provide a y-axis scrollbar.</p>
+<p>{% example html %}</p>
+<p><pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And another line of sample text here...&lt;/p&gt;
+</code></pre>
+{% endexample %}</p>
+<h2 id="variables">Variables</h2>
+<p>For indicating variables use the <code>&lt;var&gt;</code> tag.</p>
+<p>{% example html %}
+<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+{% endexample %}</p>
+<h2 id="user-input">User input</h2>
+<p>Use the <code>&lt;kbd&gt;</code> to indicate input that is typically entered via keyboard.</p>
+<p>{% example html %}
+To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+{% endexample %}</p>
+<h2 id="sample-output">Sample output</h2>
+<p>For indicating sample output from a program use the <code>&lt;samp&gt;</code> tag.</p>
+<p>{% example html %}
+<samp>This text is meant to be treated as sample output from a computer program.</samp>
+{% endexample %}</p>
+
+      </body>
+    </html>
