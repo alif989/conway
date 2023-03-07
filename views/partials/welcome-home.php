@@ -26,7 +26,7 @@
                                 href="#contactInfo" role="tab" aria-controls="contactInfo" aria-selected="false">
                                 Local 
                                 <span class="d-md-none">Locksmith</span>
-                                <span class="d-none d-md-inline-block">Myrtle Beach Locksmith</span>
+                                <span class="d-none d-md-inline-block">Conway Locksmith</span>
                                 </a>
                         </li>
 
@@ -37,15 +37,15 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active animated fadeIn" id="aboutInfo" role="tabpanel"
                         aria-labelledby="aboutTab">
-                        <h3 class="size-3 text-white">Locksmith Service in Myrtle Beach, SC 
+                        <h3 class="size-3 text-white">Locksmith Service in Conway , SC 
                         </h3>
                         <a href="<?php echo url('our-locksmith-company')?>" class="text-white"
                             title="About Our Company">
-                            <h2 class="title text-uppercase mt-4 mb-4 h1">MYRTLE BEACH LOCKSMITH</h2>
+                            <h2 class="title text-uppercase mt-4 mb-4 h1">Conway LOCKSMITH</h2>
                         </a>
                         <p class="intro text-white"> 
-                              <a href="<?php echo url('myrtle-beach-locksmith'); ?>"
-                                title="Myrtle Beach Locksmith">Myrtle Beach Locksmith</a> provides expert 
+                              <a href="<?php echo url('conway-beach-locksmith'); ?>"
+                                title="Conway Locksmith">Conway Locksmith</a> provides expert 
                                 <a  href="<?php echo url('services/residential-locksmith'); ?>"  title="residential">residential locksmith</a>,
                                  <a href="<?php echo url('services/commercial-locksmith'); ?>" title="commercial">commercial locksmith</a>, and 
                                  <a  href="<?php echo url('services/car-locksmith'); ?>" title="car locksmith">car locksmith</a> including, but not limited to   
@@ -54,9 +54,9 @@
                             and maintenance services - as well as a range of specialty services including <a
                                 href="<?php echo url('services/emergency-locksmith'); ?>"
                                 title="emergency lockout services">emergency lockout services</a> - to the entirety of
-                            the Myrtle Beach, SC areas. Our team of highly experienced, fully <a
+                            the Conway, SC areas. Our team of highly experienced, fully <a
                                 href="<?php echo url('accredetd-locksmith'); ?>"
-                                title="Certified Locksmith in Myrtle Beach">certified</a>, professional <a
+                                title="Certified Locksmith in Conway">certified</a>, professional <a
                                 href="<?php echo url('products'); ?>" title="Products">lock and key</a> technicians
                             remain on-call to travel to your direct location on a 24/7 basis - providing you with
                             custom-tailored, rapid solutions to all of your property’s unique
@@ -66,10 +66,10 @@
                             security hardware
                             needs. </p>
                             
-                            <!-- <h2 class= h2 nav-font text-white mt-5 mb-3">Cerfified and Insured Locksmith in Myrtle Beach, SC </h3> -->
+                            <!-- <h2 class= h2 nav-font text-white mt-5 mb-3">Cerfified and Insured Locksmith in Conway, SC </h3> -->
 
                             <ul class="bulletList">
-                            <li class="text-white">Fully <a href="<?php echo url('accredetd-locksmith')?>" title="Accredetd, Cerfified and Insured Locksmith in Myrtle Beach, SC">Certified and Insured Locksmith in Myrtle Beach, SC</a> </li>
+                            <li class="text-white">Fully <a href="<?php echo url('accredetd-locksmith')?>" title="Accredetd, Cerfified and Insured Locksmith in Conway, SC">Certified and Insured Locksmith in Conway, SC</a> </li>
                             <li class="text-white">Rapid Response, Direct-to-Location Locksmith Service</li>
                             <li class="text-white"><a href="<?php echo url('services/emergency-locksmith'); ?>" title="24/7 Emergency Lockout Service">24/7 Emergency Lockout Service</a></li>
                             
@@ -77,7 +77,7 @@
                             <li class="text-white">Expertly trained and highly experienced Locksmith Technicians</li>
                             
                             <li class="text-white">Custom-tailored, professional locksmith services - with 5 star <a href="<?php echo url('customer-reviews'); ?>" title="Reviews">reviews</a>!</li>
-                            <li class="text-white">Wide area of locksmith service including all of Myrtle Beach, SC and Surrounding Areas</li>
+                            <li class="text-white">Wide area of locksmith service including all of Conway, SC and Surrounding Areas</li>
                         </ul>
 
 
@@ -88,30 +88,30 @@
                     </div> 
                     <div class="tab-pane fade animated fadeIn" id="contactInfo" role="tabpanel"
                         aria-labelledby="contactTab">
-                        <h3 class="size-3 text-white">24/7 Locksmith Service in Myrtle Beach</h3>
-                            <a href="<?php echo url('myrtle-beach-locksmith')?>" class="text-white"
-                                title="Myrtle Beach Locksmith">
-                                <h2 class="title text-uppercase mt-4 mb-4">Local Myrtle Beach Locksmith</h2>
+                        <h3 class="size-3 text-white">24/7 Locksmith Service in Conway</h3>
+                            <a href="<?php echo url('conway-beach-locksmith')?>" class="text-white"
+                                title="Conway Locksmith">
+                                <h2 class="title text-uppercase mt-4 mb-4">Local Conway Locksmith</h2>
                             </a>
                         <p class="intro text-white"> 
                              
-                        <a href="<?php echo url('myrtle-beach-locksmith'); ?>"
-                                title="Myrtle Beach Locksmith">Myrtle Beach Locksmith</a> provides 24/7 emergency lockout service to homes, businesses, and vehicles at locations everywhere in the Greater Myrtle Beach, South Carolina area. Lockouts tend to occur at the most inconvenient times, posing a serious danger to  
+                        <a href="<?php echo url('conway-beach-locksmith'); ?>"
+                                title="Conway Locksmith">Conway Locksmith</a> provides 24/7 emergency lockout service to homes, businesses, and vehicles at locations everywhere in the Greater Conway, South Carolina area. Lockouts tend to occur at the most inconvenient times, posing a serious danger to  
                                    <a  href="<?php echo url('services/residential-locksmith'); ?>"  title="residential">residential locksmith</a>,
                                  <a href="<?php echo url('services/commercial-locksmith'); ?>" title="commercial">commercial locksmith</a>, and 
                                  <a  href="<?php echo url('services/car-locksmith'); ?>" title="car locksmith">car locksmith</a> security. The highly skilled, fully <a
                                 href="<?php echo url('accredetd-locksmith'); ?>"
-                                title="licensed and insured Locksmith in Myrtle Beach">licensed and insured</a> lockout technicians here at Myrtle Beach Locksmith stand ready at all times of day and night to travel to your location and instantly restore your access to your home, business, or vehicle without incurring any damage to your existing  <a href="<?php echo url('products/locks'); ?>" title="lock">lock</a> hardware.
+                                title="licensed and insured Locksmith in Conway">licensed and insured</a> lockout technicians here at Conway Locksmith stand ready at all times of day and night to travel to your location and instantly restore your access to your home, business, or vehicle without incurring any damage to your existing  <a href="<?php echo url('products/locks'); ?>" title="lock">lock</a> hardware.
                     
                     
                     </p>
                             <p class="intro text-white"> 
-                            Contact Myrtle Beach Locksmith today for rapid-arrival, affordable. highly effective emergency lockout service at all hours of day and night, exactly when you need it.
+                            Contact Conway Locksmith today for rapid-arrival, affordable. highly effective emergency lockout service at all hours of day and night, exactly when you need it.
 
                             </p>
-                             <p class="mt-5 mb-3 mt-md-5 mb-md-5"><a href="<?php echo url('myrtle-beach-locksmith')?>"
-                                    title="More on Myrtle Beach Locksmith" class="button button_primary"> READ MORE
-                                    <span class="d-none d-lg-inline-block">ON MYRTLE BEACH LOCKSMITH</span><i
+                             <p class="mt-5 mb-3 mt-md-5 mb-md-5"><a href="<?php echo url('conway-beach-locksmith')?>"
+                                    title="More on Conway Locksmith" class="button button_primary"> READ MORE
+                                    <span class="d-none d-lg-inline-block">ON Conway LOCKSMITH</span><i
                                         class="fal fa-caret-right"></i></a></p> 
                     </div>
 

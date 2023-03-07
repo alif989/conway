@@ -2,56 +2,26 @@
   return array(
 	 
 
-    'myrtle-beach-locksmith' => array(
+    'conway-beach-locksmith' => array(
 		'items'=> array(
 		  
  
 			array(
 				'title' => 'Emgergency Locksmith Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Emergancy-Locksmith/myrtle-beach-locksmith.jpg',
+				'image' => 'portfolio/Emergancy-Locksmith/Emergancy Locksmith/2.jpg',
 				'alt' => 'Emgergency Locksmith Service in Conway, SC',
 			  ), 
 			  array(
 				'title' => 'Lock Installation Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Residential-Locksmith/lock-installation.jpg',
+				'image' => 'portfolio/Residential-Locksmith/Residential-locksmith/1.jpg',
 				'alt' => 'Lock Installation Service in Conway, SC',
 			  ), 
 			  array(
-				'title' => 'Home Lockout Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Residential-Locksmith/home-lockout.jpg',
-				'alt' => 'Home Lockout Service in Conway, SC',
+				'title' => 'Commercial Service in Conway, SC',
+				'image' => 'portfolio/Commercial-Locsmith/Office-Lockout/1.jpg',
+				'alt' => 'Commercial Service in Conway, SC',
 			  ), 
-			  array(
-				'title' => 'Commercial Lock Installation Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Commercial-Locsmith/commercial-locks-installation.jpg',
-				'alt' => 'Commercial Lock Installation Service in Conway, SC',
-			  ), 
-			  array(
-				'title' => 'Office Lockout Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Commercial-Locsmith/office-lockout.jpg',
-				'alt' => 'Office Lockout Service in Conway, SC',
-			  ), 
-		
-			  array(
-				'title' => 'Broken Key Extraction Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Car-Locksmith/broken-key-extraction.jpg',
-				'alt' => 'Broken Key Extraction Service in Conway, SC',
-			  ), 
-			  array(
-				'title' => 'Car Ignition Repair Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Car-Locksmith/car-ignition-repair.jpg',
-				'alt' => 'Car Ignition Repair Service in Conway, SC',
-			  ), 
-			  array(
-				'title' => 'Car Key Programming Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Car-Locksmith/car-key-programming.jpg',
-				'alt' => 'Car Key Programming Service in Conway, SC',
-			  ), 
-			  array(
-				'title' => 'Car Key Replacement Service in Conway, SC',
-				'image' => 'portfolio/Myrtle-Beach-Locksmith/Car-Locksmith/car-key-replacement.jpg',
-				'alt' => 'Car Key Replacement Service in Conway, SC',
-			  ), 
+			 
 			),
 		),
  

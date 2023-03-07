@@ -126,8 +126,8 @@ CAR LOCKSMIHTH
                      </div>
                 </li>
                 <li class="nav-item border-0 border-left-0 text-center d-xl">
-                    <a class="nav-link" href="<?php echo url('myrtle-beach-locksmith')?>"
-                        title="Myrtle Beach Locksmith">Myrtle Beach Locksmith</a>
+                    <a class="nav-link" href="<?php echo url('conway-beach-locksmith')?>"
+                        title="Conway Locksmith">Conway Beach Locksmith</a>
                         
                 </li> 
                 <li class="nav-item border-0 border-left-0 text-center dropdown custom-dropdown">

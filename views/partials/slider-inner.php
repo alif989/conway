@@ -16,7 +16,7 @@
   //   $pageName = 'myrtle-beach-locksmith'; 
   // } 
   if (!array_key_exists($pageName,$meta)) {
-    $pageName = 'myrtle-beach-locksmith'; 
+    $pageName = 'conway-beach-locksmith'; 
   }
  
 
@@ -24,11 +24,14 @@
 <!-- slider -->
 <div class="col-sm-12 col-md-6 col-lg-7 about-carousel owl-carousel float-sm-none float-md-right">
   <?php
+   
   if (array_key_exists($pageName,$meta)) {
+
       foreach ( $meta[$pageName]['items']  as $item => $data) { 
         $title = $data['title'];
         $caption = $data['alt'];
         $image = $data['image']; 
+       
      ?>        
       <div class="item">
           <figure>

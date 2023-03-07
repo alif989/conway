@@ -5,9 +5,9 @@
       <div class="homeBanner__image banner-cover banner1" data-src="assets/img/banner/banner1.jpg"  data-src-sm="assets/img/banner/banner1-small.jpg">
       </div>
       <div class="homeBanner-item__caption bg">
-        <h3 class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Best Locksmith in Myrtle Beach, SC</h3>
-        <a href="<?php echo url('myrtle-beach-locksmith') ;?>" title="Myrtle Beach Locksmith">
-          <h1 class="text-uppercase h2 text-white">Myrtle Beach Locksmith </h1>
+        <h3 class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Best Locksmith in Conway, SC</h3>
+        <a href="<?php echo url('conway-beach-locksmith') ;?>" title="Conway Locksmith">
+          <h1 class="text-uppercase h2 text-white">Conway Locksmith </h1>
         </a>
          <ul class="list-inline list-items">
           <li class="list-inline-item"><a class="text-white button-link light-font" href="<?php echo url('services/residential-locksmith') ?>"
@@ -20,9 +20,9 @@
               title="Emergency Locksmith">Emergency Locksmith</a></li>
         </ul>
         <div class="mt-5 mb-5 d-none d-md-block d-lg-block d-xl-block">
-          <a href="<?php echo url('myrtle-beach-locksmith') ;?>" title="Read More on Myrtle Beach Locksmith"
+          <a href="<?php echo url('conway-beach-locksmith') ;?>" title="Read More on Conway Locksmith"
             class="button button_primary">READ MORE
-            <span class="d-none d-md-inline-block">ON MYRTLE BEACH LOCKSMITH </span><i class="fal fa-caret-right"></i></a>
+            <span class="d-none d-md-inline-block">ON Conway LOCKSMITH </span><i class="fal fa-caret-right"></i></a>
         </div>
       </div>
     </div>
@@ -31,21 +31,22 @@
       <div class="homeBanner__image banner-cover banner2" data-src="assets/img/banner/banner4.jpg"  data-src-sm="assets/img/banner/banner4-small.jpg">
       </div>
       <div class="homeBanner-item__caption bg">
-        <a href="<?php echo url('services/residential-locksmith') ;?>" title="Residential Locksmith Service in Myrtle Beach, SC">
+        <a href="<?php echo url('services/residential-locksmith') ;?>" title="Residential Locksmith Service in Conway, SC">
           <h2  class="text-uppercase h2 text-white">Residential Locksmith </h2>
         </a>
-        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Myrtle Beach Residential Locksmith </h3>
+        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Conway Residential Locksmith </h3>
           <ul class="list-inline list-items"> 
             <?php
               $title = ''; 
               foreach ($menuData['locksmith-services']['residential-locksmith'] as $item => $data) {    
               $title = str_replace('-', ' ',  $item);                     
-              ?><li class="list-inline-item"><a  class="text-white button-link light-font"  href="<?php echo url($data)?>" title="<?php echo $title ; ?>"><?php echo $title ; ?></a></li><?php
+              ?><li class="list-inline-item">
+                <a  class="text-white button-link light-font"  href="<?php echo url($data)?>" title="<?php echo $title ; ?>"><?php echo $title ; ?></a></li><?php
               }  
             ?>
           </ul> 
           <div class="mt-5 mb-5 d-none d-md-block d-lg-block d-xl-block">
-          <a href="<?php echo url('services/residential-locksmith') ;?>" title="Read More on Residential Locksmith Service in Myrtle Beach, SC"
+          <a href="<?php echo url('services/residential-locksmith') ;?>" title="Read More on Residential Locksmith Service in Conway, SC"
             class="button button_primary">READ MORE
             <span class="d-none d-md-inline-block">ON RESIDENTIAL LOCKSMITH </span><i class="fal fa-caret-right"></i></a>
         </div>
@@ -55,10 +56,10 @@
       <div class="homeBanner__image banner-cover banner3" data-src="assets/img/banner/banner3.jpg"  data-src-sm="assets/img/banner/banner3-small.jpg">
       </div>
       <div class="homeBanner-item__caption bg">
-        <a href="<?php echo url('services/commercial-locksmith') ;?>" title="Commercial Locksmith Service in Myrtle Beach, SC">
+        <a href="<?php echo url('services/commercial-locksmith') ;?>" title="Commercial Locksmith Service in Conway, SC">
           <h2  class="text-uppercase h2 text-white">Commercial Locksmith </h2>
         </a>
-        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Professional Commercial  Myrtle Beach Locksmith </h3>
+        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Professional Commercial  Conway Locksmith </h3>
           <ul class="list-inline list-items"> 
             <?php
               $title = ''; 
@@ -69,7 +70,7 @@
             ?>
           </ul> 
           <div class="mt-5 mb-5 d-none d-md-block d-lg-block d-xl-block">
-          <a href="<?php echo url('services/commercial-locksmith') ;?>" title="Read More on Commercial Locksmith Service in Myrtle Beach, SC"
+          <a href="<?php echo url('services/commercial-locksmith') ;?>" title="Read More on Commercial Locksmith Service in Conway, SC"
             class="button button_primary">READ MORE
             <span class="d-none d-md-inline-block">ON COMMERCIAL LOCKSMITH </span><i class="fal fa-caret-right"></i></a>
         </div>
@@ -79,10 +80,10 @@
       <div class="homeBanner__image banner-cover banner4" data-src="assets/img/banner/banner2.jpg"  data-src-sm="assets/img/banner/banner2-small.jpg">
       </div>
       <div class="homeBanner-item__caption bg">
-        <a href="<?php echo url('services/car-locksmith') ;?>" title="Car Locksmith Service in Myrtle Beach, SC">
+        <a href="<?php echo url('services/car-locksmith') ;?>" title="Car Locksmith Service in Conway, SC">
           <h2  class="text-uppercase h2 text-white">Car Locksmith </h2>
         </a>
-        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Car  Myrtle Beach Locksmith </h3>
+        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Car  Conway Locksmith </h3>
           <ul class="list-inline list-items"> 
             <?php
               $title = ''; 
@@ -103,10 +104,10 @@
       <div class="homeBanner__image banner-cover banner5" data-src="assets/img/banner/banner5.jpg"  data-src-sm="assets/img/banner/banner5-small.jpg">
       </div>
       <div class="homeBanner-item__caption bg">
-        <a href="<?php echo url('services/emergency-locksmith') ;?>" title="Emergency Locksmith Service in Myrtle Beach, SC">
+        <a href="<?php echo url('services/emergency-locksmith') ;?>" title="Emergency Locksmith Service in Conway, SC">
           <h2  class="text-uppercase h2 text-white">Emergency Locksmith </h2>
         </a>
-        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Emergency  Myrtle Beach Locksmith </h3>
+        <h3  class="d-block light-font mt-md-4 mb-4 mt-sm-2 mb-sm-3 size-3">Emergency  Conway Locksmith </h3>
           <ul class="list-inline list-items"> 
             <?php
               $title = ''; 
@@ -131,7 +132,7 @@
     <div class="owl-controls">
       <div class="carousel-custom-dots owl-dots">
         <div class="owl-dot mb-4">
-          <a class="owl-text" href="javascript:void(0)" title="Myrtle Beach Locksmith">Myrtle Beach Locksmith</a>
+          <a class="owl-text" href="javascript:void(0)" title="Conway Locksmith">Conway Locksmith</a>
         </div> 
         <div class="owl-dot mb-4">
           <a class="owl-text" href="javascript:void(0)" title="Residential Locksmith">Residential Locksmith</a>
