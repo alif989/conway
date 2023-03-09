@@ -9,7 +9,7 @@
     <h3 class="mt-3 mb-3 b-f cw">Residential Locksmith</h3>
 
     <p class="small-text cg">
-      Myrtle Beach Locksmith provides Myrtle Beach, SC homeowners with high-quality, professional home
+      Conway Locksmith provides Conway, SC homeowners with high-quality, professional home
       lock
       installation, repair, and maintenance services - as well as a range of additional services including emergency
       lockout service, lock change, rekeying locks, door repair & installation, key duplication, access control
@@ -28,10 +28,10 @@
     <h3 class="mt-3 mb-3 b-f cw">Commercial Locksmith</h3>
 
     <p class="small-text cg">
-      Myrtle Beach, SC businesses and commercial establishments can rely on  Myrtle Beach Locksmith SC’s
+      Conway, SC businesses and commercial establishments can rely on  Conway Locksmith SC’s
       team of
       experienced professional lock experts to provide the highest quality lock installation, repair, and
-      maintenance services available in all of Myrtle Beach, SC. Our team provides additional services
+      maintenance services available in all of Conway, SC. Our team provides additional services
       like
       commercial key replacement /
       duplication,
@@ -51,8 +51,8 @@
     <h3 class="mt-3 mb-3 b-f cw">Car Locksmith</h3>
 
     <p class="small-text cg">
-      If you require car locksmith service anywhere in the Myrtle Beach, SC area, you can count on
-       Myrtle Beach Locksmith SCs for easy solutions. Our team of licensed
+      If you require car locksmith service anywhere in the Conway, SC area, you can count on
+       Conway Locksmith SCs for easy solutions. Our team of licensed
       car locksmiths provide rapid, direct-to-location
       car lockout service,
       as well as a range of other services including
@@ -74,16 +74,16 @@
 
     <p class="small-text cg">
 
-      Myrtle Beach Locksmith provides top quality emergency locksmith services to homes, businesses, and vehicles
+      Conway Locksmith provides top quality emergency locksmith services to homes, businesses, and vehicles
       anywhere
-      in Myrtle Beach, SC. If you’re experiencing a lockout - at any time of day or night -
+      in Conway, SC. If you’re experiencing a lockout - at any time of day or night -
       or require any
       emergency locksmith services
       including
       emergency lock repair
       or
       emergency key replacement,
-       Myrtle Beach Locksmith SC’s expert team will arrive directly at your location in a simple matter of minutes, on a
+       Conway Locksmith SC’s expert team will arrive directly at your location in a simple matter of minutes, on a
       24/7
       basis, providing you instant solutions to all of your emergency
       lock and key

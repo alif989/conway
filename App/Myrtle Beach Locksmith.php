@@ -3,18 +3,18 @@
 return array(
 
 	'index' => array( 
-		'title' => 'Myrtle Beach Locksmith SC | (843) 920-4327 | Expert Technician for Residential, Commercial, and Car Locksmith Service',
+		'title' => 'Conway Locksmith SC | (843) 920-4327 | Expert Technician for Residential, Commercial, and Car Locksmith Service',
 		'description' => 'A local locksmith in Conway, SC where provides residential, commercial, and car lock installation, repair, and maintenance services - including emergency locksmith services. We also provide transponder key duplication, car key replacement, master keying service, car ignition switch repair, commercial door hardware, commercial lock installation, commercial lock repair,car lockout, home lockouts, business lockouts and much more.',
 		'layout' => 'home-page',
 	
 	), 
 	'our-locksmith-company' => array(
-		'title' => 'Myrtle Beach Locksmith Company | (843) 920-4327 | Expert Technician for Residential, Commercial, and Car Locksmith Service',
+		'title' => 'Conway Locksmith Company | (843) 920-4327 | Expert Technician for Residential, Commercial, and Car Locksmith Service',
 		'description' => 'A local locksmith in Conway, SC - We provides residential, commercial, and car lock installation, repair, and maintenance services - including emergency locksmith services. We also provide transponder car key replacement, car lockout, module programming, lock repair, re-key locks, safe lockout, and more.',
 	
 	),
 	'conway-beach-locksmith' => array(
-		'title' => 'Myrtle Beach Locksmith SC (843) 920-4327 Local Conway Locksmith Company',
+		'title' => 'Conway Locksmith SC (843) 920-4327 Local Conway Locksmith Company',
 		'description' => 'A local locksmith in Conway, SC where provides residential, commercial, and car lock installation, repair, and maintenance services - including emergency locksmith services. We also provide transponder car key replacement, car lockout, module programming, lock repair, re-key locks, safe lockout, and more.', 
 	),   
 	
@@ -37,7 +37,7 @@ return array(
  
 	'locksmith-resources' => array(
 		'title' => 'Locksmith Resources (843) 920-4327 Conway Locksmith | Expert Locksmith Technician Conway, SC',
-		'description' => 'Myrtle Beach Locksmith is Conway’s leading source for professional residential locksmith, commercial locksmith, and car locksmith services.',
+		'description' => 'Conway Locksmith is Conway’s leading source for professional residential locksmith, commercial locksmith, and car locksmith services.',
 	),
 	
     
@@ -50,12 +50,12 @@ return array(
 	 'services' => array(
 		'layout' => 'gallery-layout',
 		'title' => 'Locksmith Services in Conway, SC (843) 920-4327 - Best Local Conway Locksmith Company',
-		'description' => 'Myrtle Beach Locksmith provides the entire Conway, SC areas with every type of residential locksmith, commercial locksmith, and car locksmith services.',
+		'description' => 'Conway Locksmith provides the entire Conway, SC areas with every type of residential locksmith, commercial locksmith, and car locksmith services.',
 	),
 	
 	'services/residential-locksmith' => array(
 		'title' => 'Residential Locksmith in Conway, SC (843) 920-4327 Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith provides Residential Locksmith Services in Conway, SC areas including lock out services, lock change and rekey locksmith services, commerical locksmith services, lock instalaltion and lock repair services.',
+		'description' => 'Conway Locksmith provides Residential Locksmith Services in Conway, SC areas including lock out services, lock change and rekey locksmith services, commerical locksmith services, lock instalaltion and lock repair services.',
 	), 
  
 	'services/home-lockout' => array(
@@ -65,44 +65,44 @@ return array(
 		
 	'services/lock-installation' => array(
 		'title' => 'Lock Installation Conway, SC (843) 920-4327 | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith provides lock installation services in Conway, SC including lock out services, lock change and rekey locksmith services, commerical locksmith services, lock instalaltion and lock repair services in the Entire Conway Area',
+		'description' => 'Conway Locksmith provides lock installation services in Conway, SC including lock out services, lock change and rekey locksmith services, commerical locksmith services, lock instalaltion and lock repair services in the Entire Conway Area',
 	),
 
 	 
  
 	'services/commercial-locksmith' => array(
 		'title' => 'Commercial Locksmith in Conway, SC (843) 920-4327 - Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith offers commercial & business locksmith services in Conway, SC according to your needs and budget. We have a corporate account program for our commercial clients.',
+		'description' => 'Conway Locksmith offers commercial & business locksmith services in Conway, SC according to your needs and budget. We have a corporate account program for our commercial clients.',
 	),
  
 	'services/commercial-lock-installation' => array(
 		'title' => 'Commercial Door Locks Conway, SC (843) 920-4327 | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith offers commercial lock (Grade 1) Installation, repair and replacement Conway, SC. Electronic locks, storefront locks, glass door locks and more.',
+		'description' => 'Conway Locksmith offers commercial lock (Grade 1) Installation, repair and replacement Conway, SC. Electronic locks, storefront locks, glass door locks and more.',
 		), 
 
 	'services/office-lockout' => array(
 		'title' => 'Office Lockout Services Conway, SC (843) 920-4327 | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith provides office lockout service Conway, SC, including bulk lock installation / lock change and bulk door replacements  - throughout the entirety of Conway, SC. We additionally offer specialty services like transponder car key replacement, car lockout, module programming, lock repair, re-key locks, safe lockout, and more..',
+		'description' => 'Conway Locksmith provides office lockout service Conway, SC, including bulk lock installation / lock change and bulk door replacements  - throughout the entirety of Conway, SC. We additionally offer specialty services like transponder car key replacement, car lockout, module programming, lock repair, re-key locks, safe lockout, and more..',
 	),
 	 
 	'services/car-locksmith' => array(
 		'title' => 'Car Locksmith Conway, SC - (843) 920-4327 | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith provides car locksmith service in Conway, SC area, including car lockout service, on-spot car key replacement, and car ignition lock service.',
+		'description' => 'Conway Locksmith provides car locksmith service in Conway, SC area, including car lockout service, on-spot car key replacement, and car ignition lock service.',
 	), 
 	  
 	'services/car-key-programming' => array(
 		'title' => 'Car Key programming Conway, SC  | Conway Locksmith | License Car Locksmith Technician',
-		'description' => 'Myrtle Beach Locksmith provides car key programming service, including high quality car locksmith services like emergency car unlocking service and car key replacement to car door lock repair, ignition switch repair, broken car key extraction and car key duplication.',
+		'description' => 'Conway Locksmith provides car key programming service, including high quality car locksmith services like emergency car unlocking service and car key replacement to car door lock repair, ignition switch repair, broken car key extraction and car key duplication.',
 	),
 
 	'services/car-key-replacement' => array(
 		'title' => 'Car Key Replacement Service Conway, SC (843) 920-4327 Professional Car Locksmith Technician',
-		'description' => 'Myrtle Beach Locksmiths provides car key replacement service, including high quality car locksmith services like emergency car unlocking service and transponder key programming to car door lock repair, ignition switch repair, broken car key extraction and car key duplication.',
+		'description' => 'Conway Locksmiths provides car key replacement service, including high quality car locksmith services like emergency car unlocking service and transponder key programming to car door lock repair, ignition switch repair, broken car key extraction and car key duplication.',
 	),
  
 	'services/broken-key-extraction' => array(
 		'title' => 'Broken Key Extractions Conway, SC | Emergency Car Locksmith Technician', 
-		'description' => 'Myrtle Beach Locksmith in Conway, SC where extract broken or stuck car keys from car locks/ignitions, take out jammed/bent car keys, and remove keys from rusty or frozen locks. We additionally provide broken key extraction services for vehicles like busses, vans, SUVs, trucks, and even motorcycles!',
+		'description' => 'Conway Locksmith in Conway, SC where extract broken or stuck car keys from car locks/ignitions, take out jammed/bent car keys, and remove keys from rusty or frozen locks. We additionally provide broken key extraction services for vehicles like busses, vans, SUVs, trucks, and even motorcycles!',
 	),
 
 	'services/car-ignition-repair' => array(
@@ -112,7 +112,7 @@ return array(
 
 	'services/emergency-locksmith' => array(
 		'title' => '24 Hour Emergency Locksmith Conway, SC | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith offers 24/7 emergency lockout & locksmith services, where and when you need us, all over Conway and surrounding SC areas',
+		'description' => 'Conway Locksmith offers 24/7 emergency lockout & locksmith services, where and when you need us, all over Conway and surrounding SC areas',
 	), 
  
 
@@ -134,30 +134,30 @@ return array(
  
 	'products/locks' => array(
 		'title' => 'Best Deadbolt & Security Door Locks Conway, SC | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith Sales and installs most commonly used lock types for homes and businesses including high security locks like medeco locks / mul-t locks in Conway, SC',
+		'description' => 'Conway Locksmith Sales and installs most commonly used lock types for homes and businesses including high security locks like medeco locks / mul-t locks in Conway, SC',
 	),
 
 	'products/keys' => array(
 		'title' => 'House Keys and Car keys Conway, SC  | Conway Locksmith',
-		'description' => 'Myrtle Beach Locksmith offers Keys for cars and home locks. Key cutting and Key duplication services for a large variety of key in  Conway Area',
+		'description' => 'Conway Locksmith offers Keys for cars and home locks. Key cutting and Key duplication services for a large variety of key in  Conway Area',
 	), 
 	'products/safes' => array(
 		'title' => 'Best Safes & Security Safes for Home and Business in Conway, SC',
-		'description' => 'Myrtle Beach Locksmith offers Keys for cars and home locks. Key cutting and Key duplication services for a large variety of key in  Conway Area',
+		'description' => 'Conway Locksmith offers Keys for cars and home locks. Key cutting and Key duplication services for a large variety of key in  Conway Area',
 	), 
 	'products/panic-bar-devices' => array(
 		'title' => 'Pabic Bar Device / Exit Device Installation and Repair in Conway',
-		'description' => 'Myrtle Beach Locksmith carries all major panic bar devices name brands in Conway, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.',
+		'description' => 'Conway Locksmith carries all major panic bar devices name brands in Conway, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.',
 	),
 
 	'products/door-closers' => array(
 		'title' => 'High Security & Storm Door Closers in Conway, SC',
-		'description' => 'Myrtle Beach Locksmith carries high sercurity door closers, ideal storm door closers and vandal resistant roor closer in Conway, SC. Our technicians are certified and experienced on installation door closer on any residential builiding or commercial office door. We are able to accomodate projects of large scope such as hotels, new developments.',
+		'description' => 'Conway Locksmith carries high sercurity door closers, ideal storm door closers and vandal resistant roor closer in Conway, SC. Our technicians are certified and experienced on installation door closer on any residential builiding or commercial office door. We are able to accomodate projects of large scope such as hotels, new developments.',
 	),
 	
 	// 'intercoms-buzzers' => array(
 	// 	'title' => 'Intercom Systems Company - Installation & Repair | Conway Locksmith',
-	// 	'description' => 'Myrtle Beach Locksmith carries an extensive inventory of intercoms and buzzers. We offers audio door intercoms, video door intercoms, audio indoor station, video indoor station, classic intercoms, handsfree intercoms, IP network intercoms, bell for intercoms, bell for video intercoms, etc. We install residential intercoms as well as intercoms for commercial and residential buildings, offices and other business places.', 
+	// 	'description' => 'Conway Locksmith carries an extensive inventory of intercoms and buzzers. We offers audio door intercoms, video door intercoms, audio indoor station, video indoor station, classic intercoms, handsfree intercoms, IP network intercoms, bell for intercoms, bell for video intercoms, etc. We install residential intercoms as well as intercoms for commercial and residential buildings, offices and other business places.', 
 	// ),  
 
 );

@@ -5,7 +5,7 @@
  
 
 <p class="mb-5">
-  <a href="<?php echo url('/')?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries all major panic bar devices name brands in Myrtle Beach, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.  
+  <a href="<?php echo url('/')?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries all major panic bar devices name brands in Conway, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.  
 </p>
   
  

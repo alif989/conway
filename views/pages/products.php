@@ -5,9 +5,9 @@
     <div class="row">
       <div class="col-lg-10 ml-lg-auto mr-lg-auto mt-5">
 
-        <h2>High Security Locks, Keys, Safes, EXit Devices, Door Closers, Intercom and Buzzers in Myrtle Beach, SC</h2> 
+        <h2>High Security Locks, Keys, Safes, EXit Devices, Door Closers, Intercom and Buzzers in Conway, SC</h2> 
 
-        <p><a href="<?php echo url('/'); ?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> inventory includes a wide variety of locks, safes, exit devices, door closers, intercoms and buzzers for home, business & office use in Myrtle Beach, SC.</p>
+        <p><a href="<?php echo url('/'); ?>" title=" Conway Locksmith SC"> Conway Locksmith</a> inventory includes a wide variety of locks, safes, exit devices, door closers, intercoms and buzzers for home, business & office use in Conway, SC.</p>
 
         <p  class="mb-5">If required, we also provide 24/7 on-site locksmith servivces including professional 
           <a href="<?php echo url('services/residential-locksmith'); ?>" title="residential locksmith">residential</a>,  
@@ -26,7 +26,7 @@
           car lockout, 
           <a href="<?php echo url('services/house-lockout'); ?>" title="Apartment / Home Lockouts">home lockouts</a>, 
           <a href="<?php echo url('services/office-lockout'); ?>" title="Business Lockouts">business lockouts</a>  
-          -  throughout the entirety of Myrtle Beach, SC. Call 
+          -  throughout the entirety of Conway, SC. Call 
           <?php echo phone(true, true) ?> for a free consultation with regards to your locksmith needs.
         </p>
  

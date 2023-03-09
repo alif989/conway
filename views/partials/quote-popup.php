@@ -12,7 +12,7 @@
       <div class="modal-body p-lg-5">
         <div class="row">
           <div class="col d-md-block d-none">
-            <p>Here at Myrtle Beach Locksmith, we’re always ready to assist you for your locksmith service.</p>
+            <p>Here at Conway Locksmith, we’re always ready to assist you for your locksmith service.</p>
             <h3 class="mt-4">Follow Us</h3>
             <?php partial("social-link-icons")?>
             <h3>

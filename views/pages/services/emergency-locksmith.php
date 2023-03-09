@@ -2,7 +2,7 @@
 <h2>
 24/7 Emergency Locksmith Service in Conway, South Carolina
 </h2>
-<p>Have you gotten locked outside of your home, business, or car anywhere in the <a href="<?php echo url('/'); ?>" title="Myrtle Beach Locksmith">Conway</a> South Carolina area?  <a href="<?php echo url('services/home-lockout'); ?>" title="emergency lockout service">emergency lockout service</a> to homes, businesses, and vehicles at locations everywhere in the Greater Myrtle Beach, South Carolina area.  Lockouts tend to occur at the most inconvenient times, posing a serious danger to 	<a href="<?php echo url('services/residential-locksmith'); ?>" title="residential locksmith">residential</a>, 
+<p>Have you gotten locked outside of your home, business, or car anywhere in the <a href="<?php echo url('/'); ?>" title="Conway Locksmith">Conway</a> South Carolina area?  <a href="<?php echo url('services/home-lockout'); ?>" title="emergency lockout service">emergency lockout service</a> to homes, businesses, and vehicles at locations everywhere in the Greater Conway, South Carolina area.  Lockouts tend to occur at the most inconvenient times, posing a serious danger to 	<a href="<?php echo url('services/residential-locksmith'); ?>" title="residential locksmith">residential</a>, 
 Did you lose your house or office keys? Are your locks suddenly stuck or malfunctioning? Did your keys break off inside your lock? Conway Locksmith’s team of 24 hour emergency locksmith technicians stand ready to provide you with rapid effective assistance with all of your Conway emergency locksmith service needs.	
 
 <br/>

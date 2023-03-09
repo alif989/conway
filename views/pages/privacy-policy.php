@@ -26,7 +26,7 @@
 
 <a href="#" target="_blank"><img src="<?php echo assets('img/google_map_icon.png');?>" width="25" alt="Greem Locksmith Map Location"></a>  &nbsp; &nbsp;
 
-Address:  Myrtle Beach, SC, <br>United States 
+Address:  Conway, SC, <br>United States 
 </p>
 <p>	<h4 class="text-uppercase lead mb-0 pb-0">Phone:	</h4 class="text-uppercase lead mb-0 pb-0"> 
 		<a class="text-dark" href="tel:<?php echo Flight::get('phone'); ?>" title="call">

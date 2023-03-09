@@ -18,7 +18,7 @@
 				</a>
 				&nbsp;
 				Address: 
-				 Conway, SC  ,
+				Conway, SC  ,
 				United States
 
 			</p>

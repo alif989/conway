@@ -24,7 +24,7 @@ return $reviews = array(
 			'author' => 'Aaron Torres',
 			'source' => 'google',
 			'title' => 'Very Profesional!!',
-		'comment' => 'Great Service! David was very helpful and knowledgeable. It was hard to find a locksmith that was working on a Sunday and he was at my house 15 minutes after I called him. Will definitely use Myrtle Beach Locksmith from now on.
+		'comment' => 'Great Service! David was very helpful and knowledgeable. It was hard to find a locksmith that was working on a Sunday and he was at my house 15 minutes after I called him. Will definitely use Conway Locksmith from now on.
 
 		',
   ),
@@ -43,7 +43,7 @@ return $reviews = array(
 			'author' => 'Mama Byrd',
 			'source' => 'yelp',
 			'title' => 'I am calling him back!!',
-		'comment' => 'Thank you so much  Myrtle Beach Locksmith SC, very professional and timely. I would absolutely recommend these guys to anyone! They have helped me now twice with a vehicle lockout and now a building lock out. The prices of their service was affordable and they did an excellent job.',
+		'comment' => 'Thank you so much  Conway Locksmith SC, very professional and timely. I would absolutely recommend these guys to anyone! They have helped me now twice with a vehicle lockout and now a building lock out. The prices of their service was affordable and they did an excellent job.',
   ),
 
   	array(
@@ -67,7 +67,7 @@ return $reviews = array(
 	'author' => 'Mel Nadle',
 	'source' => 'google',
 	'title' => 'Efficient and very reasonable!!',
-    'comment' => 'I recently had my entire purse stolen from me which included all 3 of the keys for my car. I called Myrtle Beach Locksmith and within an hour Eli was arriving to help me get back into my car & a new key made. Eli was very time efficient and completed the job in under a 1/2 hour. Super appreciative this isn’t one of the things that has to be complicated in getting everything back that was taken from me. You have my business if I ever need any type of locksmith services again.
+    'comment' => 'I recently had my entire purse stolen from me which included all 3 of the keys for my car. I called Conway Locksmith and within an hour Eli was arriving to help me get back into my car & a new key made. Eli was very time efficient and completed the job in under a 1/2 hour. Super appreciative this isn’t one of the things that has to be complicated in getting everything back that was taken from me. You have my business if I ever need any type of locksmith services again.
 
     ',
   ),

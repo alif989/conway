@@ -30,12 +30,12 @@
 			  
 				  array(
 					'title' => 'Lock Installation Service in Conway, SC',
-					'image' => 'portfolio/Myrtle-Beach-Locksmith/Residential-Locksmith/lock-installation.jpg',
+					'image' => 'portfolio/Residential-locksmith/Home-Lockout/1.jpg',
 					'alt' => 'Lock Installation Service in Conway, SC',
 				  ), 
 				  array(
 					'title' => 'Home Lockout Service in Conway, SC',
-					'image' => 'portfolio/Myrtle-Beach-Locksmith/Residential-Locksmith/home-lockout.jpg',
+					'image' => 'portfolio/Residential-locksmith/Home-Lockout/2.jpg',
 					'alt' => 'Home Lockout Service in Conway, SC',
 				  ), 
 

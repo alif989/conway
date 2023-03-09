@@ -2,8 +2,8 @@
     <div class="row align-content-center no-gutters justify-content-center">
         <div class="col-md-6 align-self-center text-center no-gutters  justify-content-center cta-block-1">    
             <h3 class="text-uppercase text-center pb-4 mx-auto">
-                    For 24/7 locksmith service information / estimate in Myrtle Beach, SC.  
-                    <a class="highlight" href="<?php echo url('contact') ?>" title="Contact Myrtle Beach Locksmith For 24/7 locksmith service information / estimate in Myrtle Beach, SC"> Contact Us </a> or 
+                    For 24/7 locksmith service information / estimate in Conway, SC.  
+                    <a class="highlight" href="<?php echo url('contact') ?>" title="Contact Conway Locksmith For 24/7 locksmith service information / estimate in Conway, SC"> Contact Us </a> or 
                     <a class="highlight" onclick="return gtag_report_conversion('tel:<?php echo phone(true, false)?>');" href="tel:<?php echo phone(true, false) ?>" title="Call Now"> Call <?php echo phone(true, false) ?></a> 
             </h3>  
         </div>

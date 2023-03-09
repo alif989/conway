@@ -3,10 +3,10 @@
   <div class="row">
     <div class="col-lg-10 ml-lg-auto mr-lg-auto mt-5">
       <h2>
-        Residential, commercial, car and emergency locksmith service in Myrtle Beach, SC
+        Residential, commercial, car and emergency locksmith service in Conway, SC
       </h2>
       <p>
-      <a href="<?php echo url('/'); ?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> provides the entire Myrtle Beach, SC area with every type of <a
+      <a href="<?php echo url('/'); ?>" title=" Conway Locksmith SC"> Conway Locksmith</a> provides the entire Conway, SC area with every type of <a
           href="<?php echo url('services/residential-locksmith'); ?>" title="residential locksmith">residential</a>, <a
           href="<?php echo url('services/commercial-locksmith'); ?>" title="commercial locksmith">commercial</a>, and <a
           href="<?php echo url('services/car-locksmith'); ?>" title="car locksmith">car </a>
