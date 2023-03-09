@@ -1,11 +1,11 @@
 <?php Flight::set('innerPageBannerTitle', 'Panic Bar Devices')?>
 
-<h2>High Security Exit Devices &amp; Door Hardware in Myrtle Beach, SC</h2>
+<h2>High Security Exit Devices &amp; Door Hardware in Conway, SC</h2>
 
  
 
 <p class="mb-5">
-  <a href="<?php echo url('/')?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> carries all major panic bar devices name brands in Myrtle Beach, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.  
+  <a href="<?php echo url('/')?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries all major panic bar devices name brands in Myrtle Beach, SC. Our technicians are area ready to install, repair, maintain any exit device/panic bar on any door type.  
 </p>
   
  

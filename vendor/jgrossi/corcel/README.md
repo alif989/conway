@@ -1,72 +1,43 @@
-Corcel
-======
+WordPress Corcel
+================
 
 > This package allows you to use WordPress as backend (admin panel) and retrieve its data using Eloquent, with any PHP project or even framework.
-
-[![Travis](https://travis-ci.org/corcel/corcel.svg?branch=dev)](https://travis-ci.org/corcel/corcel?branch=dev)
-[![Packagist](https://img.shields.io/packagist/v/jgrossi/corcel.svg)](https://packagist.org/packages/jgrossi/corcel)
-[![Packagist](https://img.shields.io/packagist/dt/jgrossi/corcel.svg)](https://github.com/jgrossi/corcel/releases)
-
-<a href='https://ko-fi.com/A36513JF' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
-[![Twitter Follow](https://img.shields.io/twitter/follow/corcelphp.svg?style=social&label=Follow)](http://twitter.com/CorcelPHP)
 
 Corcel is a class collection created to retrieve WordPress database data using a better syntax. It uses the [Eloquent ORM](https://github.com/illuminate/database) developed for the Laravel Framework, but you can use Corcel in any type of PHP project, with any framework, including Laravel.
 
 This way, you can use WordPress as the backend (admin panel), to insert posts, custom types, etc, and you can use whatever you want in the frontend, like Silex, Slim Framework, Laravel, Zend, or even pure PHP (why not?). So, just use Corcel to retrieve data from WordPress.
 
-# Contents
+## Installation
 
-- [Installing Corcel](#install)
-- [Database Setup](#database-setup)
-- [Usage](#usage)
-    - [Posts](#posts)
-    - [Advanced Custom Fields (ACF) Integration](#acf)
-    - [Custom Post Type](#custom-post)
-    - [Single Table Inheritance](#single-tab)
-    - [Taxonomies](#taxonomies)
-    - [Post Format](#post-format)
-    - [Pages](#pages)
-    - [Categories & Taxonomies](#cats)
-    - [Attachments & Revision](#attachments)
-    - [Menu](#menu)
-    - [Users](#users)
-    - [Authentication](#auth)
-    - [Running Tests](#tests)
-- [Contributing](#contrib)
-- [License](#license)
-
-# <a id="install"></a> Installing Corcel
-
-You need to use Composer to install Corcel into your project:
+To install Corcel, just run the following command:
 
 ```
 composer require jgrossi/corcel
 ```
 
-Now you're almost ready to use Corcel classes, like `Corcel\Post`.
+Or you can include Corcel inside `composer.json`, run `composer install` and wait the installation process.
 
-## WordPress Installation
+```
+    "require": {
+        "jgrossi/corcel": "~1.0.0"
+    },
+```
 
-You can install WordPress inside Laravel's `/public` directory, like `/public/wordpress`, for example, or even in a different domain or server. You only have to enable access to its database, because that's what Corcel will use. This is made by creating a database connection.
+## Usage
 
-# <a id="database-setup"></a> Database Setup
+### I'm using Laravel
 
-## Laravel Setup
-
-Corcel by default will look for a `wordpress` or `corcel` database connection in your Laravel `config/database.php` file. If it does not find any of these connections it'll use the `default` connection.
-
-For example, you can have a `default` connection for your Laravel app tables and models, and another one called `wordpress` or `corcel` for your WordPress tables. Easy like that.
+If you are using Laravel you **do not need** to configure database again. It's all already set by Laravel. So you have only to change the `config/database.php` config file and set yours connections. You can use just one connection or two (one for your Laravel app and another to Corcel). Your file will look like this:
 
 ```php
 <?php // File: /config/database.php
 
 'connections' => [
 
-    'mysql' => [ // for Laravel database
+    'mysql' => [ // this is your Laravel database connection
         'driver'    => 'mysql',
         'host'      => 'localhost',
-        'database'  => 'mydatabase',
+        'database'  => 'app',
         'username'  => 'admin'
         'password'  => 'secret',
         'charset'   => 'utf8',
@@ -76,10 +47,10 @@ For example, you can have a `default` connection for your Laravel app tables and
         'engine'    => null,
     ],
 
-    'wordpress' => [ // for WordPress database
+    'wordpress' => [ // this is your Corcel database connection, where WordPress tables are
         'driver'    => 'mysql',
         'host'      => 'localhost',
-        'database'  => 'mydatabase',
+        'database'  => 'corcel',
         'username'  => 'admin',
         'password'  => 'secret',
         'charset'   => 'utf8',
@@ -88,10 +59,33 @@ For example, you can have a `default` connection for your Laravel app tables and
         'strict'    => false,
         'engine'    => null,
     ],
+    
 ],
 ```
 
-## Other PHP Framework (not Laravel) Setup
+Now you should create your own `Post` model class. Laravel stores model classes in `app` directory, inside `App` namespace (or the name you gave it). Your `Post` class should extends `Corcel\Post` and set the connection name you're using, in this case `wordpress`:
+
+```php
+<?php // File: app/Post.php
+
+namespace App;
+
+use Corcel\Post as Corcel;
+
+class Post extends Corcel
+{
+    protected $connection = 'wordpress';
+}
+```
+
+So, now you can fetch database data:
+
+```php
+$posts = App\Post::all(); // using the 'wordpress' connection
+$posts = Corcel\Post::all(); // using the 'default' Laravel connection
+```
+
+### I'm using another PHP Framework
 
 Here you have to configure the database to fit the Corcel requirements. First, you should include the Composer `autoload` file if not already loaded:
 
@@ -121,34 +115,7 @@ You can specify all Eloquent params, but some are default (but you can override 
 'prefix'    => 'wp_', // Specify the prefix for WordPress tables, default prefix is 'wp_'
 ```
 
-# <a id="usage"></a>  Usage
-
-Optionally you can create your own `Post` model which extends `Corcel\Post`. Then set the connection name you're using, in this case `foo-bar`:
-
-```php
-<?php // File: app/Post.php
-
-namespace App;
-
-use Corcel\Post as Corcel;
-
-class Post extends Corcel
-{
-    protected $connection = 'foo-bar';
-}
-```
-
-So, now you can fetch WP database data using your own class:
-
-```php
-$posts = App\Post::all(); // using the 'foo-bar' connection
-```
-
-> Remembering that if you have a `wordpress` or `corcel` database connection you don't need to extend `Corcel\Post` class, just use `Corcel\Post` instead.
-
-## <a id="posts"></a> Posts
-
-> Every time you see `Post::method()`, if you're using your own Post class (where you set the connection name), like `App\Post` you should use `App\Post::method()` and not `Post::method()`. All the examples are assuming you already know this difference.
+### Posts
 
 ```php
 // All published posts
@@ -194,25 +161,7 @@ $post->meta->url = 'http://grossi.io';
 $post->save();
 ```
 
-## <a id="acf"></a>  Advanced Custom Fields (ACF)
-
-If you want to retrieve a custom field created by the [Advanced Custom Fields (ACF)](http://advancedcustomfields.com) plugin, you have to install the [`corcel/acf`](http://github.com/corcel/acf) plugin and call the custom field like this:
-
-```php
-$post = Post::find(123);
-echo $post->acf->some_radio_field;
-$repeaterFields = $post->acf->my_repeater_name;
-```
-
-To avoid unnecessary SQL queries just set the field type you're requesting. Usually two SQL queries are necessary to get the field type, so if you want to specify it you're skipping those extra queries:
-
-```php
-$post = Post::find(123);
-echo $post->acf->text('text_field_name');
-echo $post->acf->boolean('boolean_field_name');
-```
-
-## <a id="custom-post"></a> Custom Post Type
+### Custom Post Type
 
 You can work with custom post types too. You can use the `type(string)` method or create your own class.
 
@@ -242,7 +191,7 @@ foreach ($stores as $store) {
 }
 ```
 
-## <a id="single-tab"></a>Single Table Inheritance
+## Single Table Inheritance
 
 If you choose to create a new class for your custom post type, you can have this class be returned for all instances of that post type.
 
@@ -260,26 +209,9 @@ $videos = Post::type('video')->status('publish')->get();
 
 You can also do this for inbuilt classes, such as Page or Post. Simply register the Page or Post class with the associated post type string, and that object will be returned instead of the default one.
 
-This is particular useful when you are intending to get a Collection of Posts of different types (e.g. when fetching the posts defined in a menu).
+This is particular useful when you are intending to get a Collection of Posts of different types (e.g. when fetching the posts defined in a menu). 
 
-## <a id="shortcodes"></a> Shortcodes
-
-You can add [shortcodes](https://codex.wordpress.org/Shortcode_API) by calling the `addShortcode` method on the `Post` model :
-
-```php
-// [gallery id="1"]
-Post::addShortcode('gallery', function ($shortcode) {
-    return $shortcode->getName() . '.' . $shortcode->getParameter('id');
-});
-$post = Post::find(1);
-echo $post->content;
-```
-
-If you are using Laravel, we suggest adding your shortcodes handlers in `App\Providers\AppServiceProvider`, in the `boot` method.
-
-The [*thunderer/shortcode*](https://github.com/thunderer/Shortcode) library is used to parse the shortcodes.  For more information, [click here](https://github.com/thunderer/Shortcode).
-
-## <a id="taxonomies"></a>Taxonomies
+### Taxonomies
 
 You can get taxonomies for a specific post like:
 
@@ -295,29 +227,18 @@ Or you can search for posts using its taxonomies:
 $post = Post::taxonomy('category', 'php')->first();
 ```
 
-## <a id="post-format"></a>Post Format
+### Pages
 
-You can also get the post format, like the WordPress function `get_post_format()`:
-
-```php
-echo $post->getFormat(); // should return something like 'video', etc
-```
-
-## <a id="pages"></a>Pages
-
-Pages are like custom post types. You can use `Post::type('page')` or the `Corcel\Page` class.
+Pages are like custom post types. You can use `Post::type('page')` or the `Page` class.
 
 ```php
-
-use Corcel\Page;
-
 // Find a page by slug
 $page = Page::slug('about')->first(); // OR
 $page = Post::type('page')->slug('about')->first();
 echo $page->post_title;
 ```
 
-## <a id="cats"></a>Categories & Taxonomies
+### Categories & Taxonomies
 
 Get a category or taxonomy or load posts from a certain category. There are multiple ways
 to achieve it.
@@ -340,7 +261,7 @@ $cat->posts->each(function($post) {
 });
 ```
 
-## <a id="attachments"></a>Attachment and Revision
+### Attachment and Revision
 
 Getting the attachment and/or revision from a `Post` or `Page`.
 
@@ -354,7 +275,7 @@ $post = Post::slug('test')->with('revision')->first();
 print_r($post->revision);
 ```
 
-## <a id="menu"></a> Menu
+### Menu
 
 To get a menu by its slug, use the syntax below.
 The menu items will be loaded in the `nav_items` variable. The currently supported menu items are: Pages, Posts, Links, Categories, Tags.
@@ -395,7 +316,7 @@ foreach ($menuArray[0] as $item) {
 }
 ```
 
-## <a id="users"></a> Users
+### Users
 
 You can manipulate users in the same manner you work with posts:
 
@@ -408,9 +329,9 @@ $user = User::find(1);
 echo $user->user_login;
 ```
 
-## <a id="auth"></a>Authentication
+### Authentication
 
-### Using laravel
+#### Using laravel
 
 You will have to register Corcel's authentication service provider in `config/app.php` :
 
@@ -458,7 +379,7 @@ class PasswordController extends Controller
     }
 ```
 
-### Using something else
+#### Using something else
 
 You can use the `AuthUserProvider` class to authenticate an user :
 
@@ -470,7 +391,7 @@ if(!is_null($user) && $userProvider->validateCredentials($user, ['password' => '
 }
 ```
 
-# <a id="tests"></a> Running Tests
+## Running tests
 
 To run the phpunit tests, execute the following command :
 
@@ -484,7 +405,7 @@ If you have the global `phpunit` command installed you can just type:
 phpunit
 ```
 
-# <a id="contrib"></a> Contributing
+## Contributing
 
 All contributions are welcome to help improve Corcel.
 
@@ -498,8 +419,8 @@ Before you submit your pull request consider the following guidelines:
 
 - Run the unit tests, and ensure that all tests pass.
 
-- In GitHub, send a pull request to `corcel:dev`, not `corcel:master`, please.
+- In GitHub, send a pull request to `corcel:dev`.
 
-## <a id="license"></a> Licence
+## Licence
 
 [MIT License](http://jgrossi.mit-license.org/) © Junior Grossi

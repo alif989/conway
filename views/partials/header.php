@@ -13,9 +13,9 @@
 <a class="mr-lg-1 mr-xl-2 pl-2 pr-2 cw nav-font d-xl" href="<?php echo url('services/residential-locksmith');?>" title="Residential Locksmith">
         RESIDENTIAL LOCKSMIHTH 
 </a>
-<a class="mr-lg-1 mr-xl-2 pl-2 pr-2 cw nav-font d-xl" href="<?php echo url('services/commercial-locksmith');?>" title="Commercial Locksmith">
+<!-- <a class="mr-lg-1 mr-xl-2 pl-2 pr-2 cw nav-font d-xl" href="<?php echo url('services/commercial-locksmith');?>" title="Commercial Locksmith">
 RESIDENTIAL LOCKSMIHTH 
-</a>
+</a> -->
 <a class="mr-lg-1 mr-xl-2 pl-2 pr-2 cw nav-font d-xl" href="<?php echo url('services/car-locksmith');?>" title="Car Locksmith">
 CAR LOCKSMIHTH 
 </a> 
@@ -147,7 +147,7 @@ CAR LOCKSMIHTH
                     <a class="nav-link" href="<?php echo url('blog')?>" title="Blog">Blog</a>
                 </li>  
               
-                <li class="nav-item border-0 border-left-0 text-center dropdown custom-dropdown">
+                <!-- <li class="nav-item border-0 border-left-0 text-center dropdown custom-dropdown">
                     <a class="nav-link" href="#" title="Service Areas">Service Areas <i class="fal fa-angle-down"></i></a>
                     
                         <div class="row">
@@ -166,7 +166,7 @@ CAR LOCKSMIHTH
                         </div> 
                    
                   
-                </li> 
+                </li>  -->
         
                 <li class="nav-item border-0 border-left-0 text-center">
                     <a class="nav-link" href="<?php echo url('customer-reviews')?>" title="Customer Reviews">Reviews</a>

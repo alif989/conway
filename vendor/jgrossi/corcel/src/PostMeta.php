@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Corcel\PostMeta.
+ * Corcel\PostMeta
  *
  * @author Junior Grossi <juniorgro@gmail.com>
  */
@@ -18,8 +18,7 @@ class PostMeta extends Model
     protected $fillable = ['meta_key', 'meta_value', 'post_id'];
 
     /**
-     * Post relationship.
-     *
+     * Post relationship
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function post($ref = false)
@@ -49,11 +48,7 @@ class PostMeta extends Model
     public function getValueAttribute()
     {
         try {
-            $value = unserialize($this->meta_value);
-            // if we get false, but the original value is not false then something has gone wrong.
-            // return the meta_value as is instead of unserializing
-            // added this to handle cases where unserialize doesn't throw an error that is catchable
-            return $value === false && $this->meta_value !== false ? $this->meta_value : $value;
+            return unserialize($this->meta_value);
         } catch (Exception $ex) {
             return $this->meta_value;
         }
@@ -61,9 +56,7 @@ class PostMeta extends Model
 
     /**
      * Taxonomy relationship from the meta_value.
-     *
-     * @param string $key
-     *
+     * @param  string $key
      * @return \Illuminate\Database\Eloquent\Relations\Relation
      */
     public function taxonomy($primary = null, $where = null)
@@ -85,13 +78,11 @@ class PostMeta extends Model
     }
 
     /**
-     * Override newCollection() to return a custom collection.
-     *
+     * Override newCollection() to return a custom collection
      * @param array $models
-     *
      * @return \Corcel\PostMetaCollection
      */
-    public function newCollection(array $models = [])
+    public function newCollection(array $models = array())
     {
         return new PostMetaCollection($models);
     }

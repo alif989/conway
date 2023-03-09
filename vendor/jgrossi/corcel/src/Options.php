@@ -3,17 +3,15 @@
 namespace Corcel;
 
 use Exception;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
 /**
  * Options class.
  *
  * @author José CI <josec89@gmail.com>
  */
-class Options extends Model
+class Options extends Eloquent
 {
-    const CREATED_AT = null;
-    const UPDATED_AT = null;
-
     /**
      * The database table used by the model.
      *
@@ -54,11 +52,7 @@ class Options extends Model
     public function getValueAttribute()
     {
         try {
-            $value = unserialize($this->option_value);
-            // if we get false, but the original value is not false then something has gone wrong.
-            // return the option_value as is instead of unserializing
-            // added this to handle cases where unserialize doesn't throw an error that is catchable
-            return $value === false && $this->option_value !== false ? $this->option_value : $value;
+            return unserialize($this->option_value);
         } catch (Exception $ex) {
             return $this->option_value;
         }

@@ -41,6 +41,13 @@ class Breadcrumbs
     protected $listItemCssClass;
 
     /**
+     * The last breadcrumb has a href value.
+     *
+     * @var bool
+     */
+    protected $lastItemWithHref = false;
+
+    /**
      * The class constructor. Accepts an optional array of breadcrumbs, and an
      * optional array of CSS classes to be applied to the container element.
      *
@@ -322,7 +329,7 @@ class Breadcrumbs
      *
      * If set to `null`, the divider won't be printed at all.
      *
-     * @param string $divider
+     * @param string|null $divider
      * @return $this
      */
     public function setDivider($divider)
@@ -348,6 +355,29 @@ class Breadcrumbs
     public function getDivider()
     {
         return $this->divider;
+    }
+
+    /**
+     * Sets a bool to allow the last item to have a href.
+     *
+     * @param bool $active
+     * @return $this
+     */
+    public function setLastItemWithHref($active)
+    {
+        $this->lastItemWithHref = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets the current bool for lastItemWithHref
+     *
+     * @return bool
+     */
+    public function getLastItemWithHref()
+    {
+        return $this->lastItemWithHref;
     }
 
     /**
@@ -465,9 +495,16 @@ class Breadcrumbs
                 . "<a itemprop=\"item\" href=\"{$href}\"><span itemprop=\"name\">{$name}</span></a>"
                 . "{$positionMeta}{$divider}</li>";
         } else {
-            return '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" '
-                . "class=\"{$this->listItemCssClass} active\"><span itemprop=\"name\">{$name}</span>"
-                . "{$positionMeta}</li>";
+            if ($this->lastItemWithHref) {
+                return '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" '
+                    . "class=\"{$this->listItemCssClass} active\">"
+                    . "<a itemprop=\"item\" href=\"{$href}\"><span itemprop=\"name\">{$name}</span></a>"
+                    . "{$positionMeta}</li>";
+            } else {
+                return '<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" '
+                    . "class=\"{$this->listItemCssClass} active\"><span itemprop=\"name\">{$name}</span>"
+                    . "{$positionMeta}</li>";
+            }
         }
     }
 

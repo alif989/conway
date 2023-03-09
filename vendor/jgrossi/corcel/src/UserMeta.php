@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Corcel\UserMeta.
+ * Corcel\UserMeta
  *
  * @author Mickael Burguet <www.rundef.com>
  */
@@ -13,10 +13,10 @@ class UserMeta extends Model
     protected $table = 'usermeta';
     protected $primaryKey = 'umeta_id';
     public $timestamps = false;
-    protected $fillable = ['meta_key', 'meta_value', 'user_id'];
+    protected $fillable = array('meta_key', 'meta_value', 'user_id');
 
     /**
-     * User relationship.
+     * User relationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -26,13 +26,12 @@ class UserMeta extends Model
     }
 
     /**
-     * Override newCollection() to return a custom collection.
+     * Override newCollection() to return a custom collection
      *
      * @param array $models
-     *
      * @return \Corcel\UserMetaCollection
      */
-    public function newCollection(array $models = [])
+    public function newCollection(array $models = array())
     {
         return new UserMetaCollection($models);
     }

@@ -21,6 +21,11 @@ class RouterTest extends PHPUnit_Framework_TestCase
      */
     private $request;
 
+    /**
+     * @var \flight\core\Dispatcher
+     */
+    private $dispatcher;
+
     function setUp(){
         $this->router = new \flight\net\Router();
         $this->request = new \flight\net\Request();
@@ -258,4 +263,16 @@ class RouterTest extends PHPUnit_Framework_TestCase
 
         $this->check('404');
     }
+
+    
+    // Passing URL parameters matched with regular expression for a URL containing Cyrillic letters:
+    function testRegExParametersCyrillic(){
+        $this->router->map('/категория/@name:[абвгдеёжзийклмнопрстуфхцчшщъыьэюя]+', function($name){
+            echo $name;
+        });
+        $this->request->url = urlencode('/категория/цветя');
+
+        $this->check('цветя');
+    }
+    
 }

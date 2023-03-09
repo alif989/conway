@@ -1,8 +1,8 @@
 <?php Flight::set('innerPageBannerTitle', 'Intercoms')?>
-<h2>Best Intercom fo Home &amp; Business in Myrtle Beach, SC</h2>
+<h2>Best Intercom fo Home &amp; Business in Conway, SC</h2>
 
 
-<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> carries an extensive inventory of intercoms and buzzers. We offers audio door intercoms, video door intercoms, audio indoor station, video indoor station, classic intercoms, handsfree intercoms, IP network intercoms, bell for intercoms, bell for video intercoms, etc. We install residential intercoms as well as intercoms for commercial and residential buildings, offices and other business places. </p>  
+<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries an extensive inventory of intercoms and buzzers. We offers audio door intercoms, video door intercoms, audio indoor station, video indoor station, classic intercoms, handsfree intercoms, IP network intercoms, bell for intercoms, bell for video intercoms, etc. We install residential intercoms as well as intercoms for commercial and residential buildings, offices and other business places. </p>  
 
 <div class="row"> 
 <div class="col-sm-2 col-md-4 text-center" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1000">

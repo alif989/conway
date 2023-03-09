@@ -1,7 +1,7 @@
 <?php Flight::set('innerPageBannerTitle', 'Door Closers')?>
-<h2>High Security &amp; Storm Door Closers in Myrtle Beach, SC </h2>
-<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> carries high sercurity door closers, ideal storm door closers and vandal resistant roor
-    closer in Myrtle Beach, SC. Our technicians are certified and experienced on installation door closer on
+<h2>High Security &amp; Storm Door Closers in Conway, SC </h2>
+<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries high sercurity door closers, ideal storm door closers and vandal resistant roor
+    closer in Conway, SC. Our technicians are certified and experienced on installation door closer on
     any residential builiding or commercial office door. We are able to accomodate projects of large scope such as
     hotels, new developments. </p>
 <div class="row">

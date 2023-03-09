@@ -20,5 +20,10 @@
             "App/routes.php",
             "App/helpers.php"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
     }
 }

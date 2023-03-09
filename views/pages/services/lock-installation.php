@@ -1,37 +1,45 @@
 <?php Flight::set('innerPageBannerTitle', 'Lock Installation')?>
 <h2>
-Home Lock Installation Services Myrtle Beach, SC
+Home Lock Installation Service in Conway, SC
 </h2>
 
 <p>
-Myrtle Beach Locksmith installs a wide range of lock types at residential properties throughout Myrtle Beach, South Carolina and the Greater Myrtle Beach area.</p>
+<a href="<?php echo url('/'); ?>" title="Conway Locksmith"> Conway Locksmith</a> 
+installs a wide array of lock types at homes throughout the Conway, South Carolina area. If you just moved to a new Conway property, want to upgrade your existing older or broken locks, have experienced a burglary or break-in, or are responding to an insurance request - or even if you just want to upgrade your home security, the professional lock and key technicians here at Conway Locksmith are prepared to provide you with highly skilled, effective assistance in deciding the perfect lock to meet both your Conway property’s unique security needs and budgetary requirements.
+</p>
 
 <?php partial("slider-inner"); ?>
 
-<p>Whether you just moved to a new property, need to upgrade antique or broken <a href="<?php echo url('products/locks'); ?>" title="locks">locks</a>, are responding to a burglary or insurance request, or simply want to spruce up your home security, the lock and key experts here at <a href="<?php echo url('/'); ?>" title="Myrtle Beach Locksmith"> Myrtle Beach Locksmith</a> stand ready to provide you with highly professional assistance in determining and choosing an effective and budget-friendly lock to meet your unique security needs.</p>
-
-<p>Myrtle Beach Locksmith installs lock types including high security deadbolts, mortise locks, smart locks, Bluetooth enabled locks, biometric locks, storage unit locks, shed locks, window locks, bathroom locks, and much, much more. </p>
-
-<p>Myrtle Beach Locksmith carries an inventory of locks built by the industry's leading security manufacturers, and are available around the clock to deliver you rapid-arrival, highly-effective, durable, long-lasting, and affordable solutions to all of your Myrtle Beach lock installation and security hardware needs.
-
+<p>
+	<a href="<?php echo url('/'); ?>" title="Conway Locksmith"> Conway Locksmith</a> 
+	installs all forms of locks including high security deadbolt locks, mortise locks, Bluetooth locks, smart locks, biometric locks, shed locks, storage unit locks, window locks, bathroom locks, and much more. Conway Locksmith carries a massive inventory of lock types built by the security industry’s top manufacturers. Conway Locksmith is available on a 24/7 basis to price you efficient, rapid-arrival, effective, durable, and budget-friendly solutions for all of your Conway lock installation and security hardware installation needs.
 </p>
+
 
 
  
 <h3 class="h4">
-Myrtle Beach Locksmith provides professional lock installation services throughout Myrtle Beach, South Carolina, including:
+Conway Locksmith provides expert lock installation services to Conway, South Carolina, including, but not limited to
 </h3>
 <ul class="bulletList">
-<li>Smart Lock Installation Myrtle Beach</li>
-	<li>Deadbolt Lock Installation Myrtle Beach</li>
-	<li>Cylinder Lock Installation Myrtle Beach</li>
-	<li>Smart Lock Installation Myrtle Beach</li>
-	<li>Biometric Lock Installation Myrtle Beach</li>
-	<li>Magnetic Lock Installation Myrtle Beach</li>
-	<li>Storage Lock Installation Myrtle Beach</li>
-	<li>Automatic Lock Installation Myrtle Beach</li>
-	<li>Bathroom Lock Installation Myrtle Beach</li>
-	<li>Garage Door Lock Installation Myrtle Beach</li>
+	
+
+Cylinder Lock Installation Conway
+
+Mortise Lock Installation Conway
+Automatic Lock Installation Conway
+Magnetic Lock Installation Conway
+Lever Handle Lock Installation Conway
+And much more!
+
+	<li>Smart Lock Installation Conway</li>
+	<li>Deadbolt Lock Installation Conway</li>
+	<li>Cylinder Lock Installation Conway</li>
+	<li>High-security Lock Installation Conway</li>
+	<li>Mortise Lock Installation Conway</li>
+	<li>Automatic Lock Installation Conway</li>
+	<li>Magnetic Lock Installation Conway</li>
+	<li>Lever Handle Lock Installation Conway</li>
 	<li>and much more!</li>
 </ul>
 <?php partial("cta-inner-block"); ?>

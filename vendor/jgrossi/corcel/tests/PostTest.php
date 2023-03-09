@@ -2,7 +2,6 @@
 
 use Corcel\Post;
 use Corcel\Page;
-use Thunder\Shortcode\Shortcode\ShortcodeInterface;
 
 class PostTest extends PHPUnit_Framework_TestCase
 {
@@ -53,34 +52,6 @@ class PostTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($post->post_status, $post->status);
     }
 
-    public function testNewPostAccessors()
-    {
-        $values = [
-            'post_title' => 'test',
-            'post_content' => 'test utf8 é à',
-            'post_excerpt' => 'test chinese characters お問い合わせ',
-        ];
-
-        $post = new Post();
-        foreach ($values as $k => $v) {
-            $post->{$k} = $v;
-        }
-        $post->save();
-        $postID = $post->ID;
-
-        $post = Post::find($postID);
-        foreach ($values as $k => $v) {
-            $this->assertEquals($post->{$k}, $v);
-
-            $accessorName = substr($k, strlen('post_'));
-            $this->assertEquals($post->{$accessorName}, $v);
-        }
-        $post->delete();
-
-        $post = Post::find($postID);
-        $this->assertEquals($post, null);
-    }
-
     public function testPostCustomFields()
     {
         $post = Post::find(2);
@@ -92,7 +63,7 @@ class PostTest extends PHPUnit_Framework_TestCase
 
     public function testPostOrderBy()
     {
-        $posts = Post::orderBy('post_date', 'asc')->take(5)->get();
+        $posts = Post::orderBy('post_date', 'asc')->get();
 
         $lastDate = null;
         foreach ($posts as $post) {
@@ -102,7 +73,7 @@ class PostTest extends PHPUnit_Framework_TestCase
             $lastDate = $post->post_date;
         }
 
-        $posts = Post::orderBy('post_date', 'desc')->take(5)->get();
+        $posts = Post::orderBy('post_date', 'desc')->get();
 
         $lastDate = null;
         foreach ($posts as $post) {
@@ -119,7 +90,7 @@ class PostTest extends PHPUnit_Framework_TestCase
         $taxonomy = $post->taxonomies()->first();
         $this->assertEquals($taxonomy->taxonomy, 'category');
 
-        $post = Post::taxonomy('category', ['php'])->first();
+        $post = Post::taxonomy('category', 'php')->first();
         $this->assertEquals($post->ID, 1);
 
         $post = Post::taxonomy('category', 'php')->first();
@@ -181,21 +152,21 @@ class PostTest extends PHPUnit_Framework_TestCase
 
     public function testSingleTableInheritance()
     {
-        Post::registerPostType('page', '\\Corcel\\Page');
+        Post::registerPostType('page', "\\Corcel\\Page");
 
         $page = Post::type('page')->first();
 
-        $this->assertInstanceOf('\\Corcel\\Page', $page);
+        $this->assertInstanceOf("\\Corcel\\Page", $page);
     }
 
     public function testClearRegisteredPostTypes()
     {
-        Post::registerPostType('page', '\\Corcel\\Page');
+        Post::registerPostType('page', "\\Corcel\\Page");
         Post::clearRegisteredPostTypes();
 
         $page = Post::type('page')->first();
 
-        $this->assertInstanceOf('\\Corcel\\Post', $page);
+        $this->assertInstanceOf("\\Corcel\\Post", $page);
     }
 
     public function testPostRelationConnections()
@@ -204,59 +175,5 @@ class PostTest extends PHPUnit_Framework_TestCase
         $post->setConnection('no_prefix');
 
         $this->assertEquals('no_prefix', $post->author->getConnectionName());
-    }
-
-    public function testPostTypeIsFillable()
-    {
-        $postType = 'video';
-        $post = new Post(['post_type' => $postType]);
-        $this->assertEquals($postType, $post->post_type);
-    }
-
-    /**
-     * This tests to ensure that when the post_parent is 0, it returns 0 and not null
-     * Ocde in the Post::_get() method only checked if the value was false, and so
-     * wouldn't return values from the model that were false (like 0).
-     */
-    public function testPostParentDoesNotReturnNullWhenItIsZero()
-    {
-        $post = Post::find(1);
-
-        $this->assertNotNull($post->post_parent);
-    }
-
-    public function testAddShortcode()
-    {
-        Post::addShortcode('gallery', function (ShortcodeInterface $s) {
-            return $s->getName().'.'.$s->getParameter('id').'.'.$s->getParameter('size');
-        });
-
-        $post = Post::find(123);
-
-        $this->assertEquals($post->content, 'test gallery.123.medium shortcodes');
-    }
-
-    public function testMultipleShortcodes()
-    {
-        $post = Post::find(125);
-
-        $this->assertEquals($post->content, '1~gallery.1.small2~gallery.2.medium');
-    }
-
-    public function testRemoveShortcode()
-    {
-        Post::removeShortcode('gallery');
-
-        $post = Post::find(123);
-
-        $this->assertEquals($post->content, 'test [gallery id="123" size="medium"] shortcodes');
-    }
-
-    public function testPostFormat()
-    {
-        $post = Post::find(3);
-        $this->assertEquals('video', $post->getFormat());
-        $post = Post::find(1);
-        $this->assertFalse($post->getFormat());
     }
 }

@@ -1,15 +1,19 @@
-<?php
+<?php 
 
 namespace Corcel\Password;
 
 use Hautelook\Phpass\PasswordHash;
+use Illuminate\Hashing\BcryptHasher;
+
+require_once(__DIR__ . "/../../vendor/autoload.php");
 
 class PasswordService
 {
-    public function __construct()
+    function __construct()
     {
-        $this->hasher = new PasswordHash(8, true);
+        $this->wp_hasher = new BcryptHasher();
     }
+  
 
     /**
      * Create a hash (encrypt) of a plain text password.
@@ -20,13 +24,12 @@ class PasswordService
      * @since 2.5.0
      *
      * @param string $password Plain text user password to hash
-     *
      * @return string The hash string of the password
      */
-    public function makeHash($password)
-    {
-        return $this->hasher->HashPassword(trim($password));
+    function wp_hash_password($password) {
+        return $this->wp_hasher->make(trim($password));
     }
+
 
     /**
      * Checks the plaintext password against the encrypted Password.
@@ -42,19 +45,17 @@ class PasswordService
      * @since 2.5.0
      *
      * @param string     $password Plaintext user's password
-     * @param string     $hash     Hash of the user's password to check against
-     * @param string|int $user_id  Optional. User ID
-     *
+     * @param string     $hash     Hash of the user's password to check against.
+     * @param string|int $user_id  Optional. User ID.
      * @return bool False, if the $password does not match the hashed password
      */
-    public function check($password, $hash, $user_id = '')
-    {
+    function wp_check_password($password, $hash, $user_id = '') {
         // If the hash is still md5...
         if (strlen($hash) <= 32) {
-            return $hash === md5($password);
+            return hash_equals($hash, md5($password));
         }
         // If the stored hash is longer than an MD5, presume the
         // new style phpass portable hash.
-        return $this->hasher->CheckPassword($password, $hash);
+        return $this->wp_hasher->check($password, $hash);
     }
 }

@@ -1,9 +1,10 @@
 <?php Flight::set('innerPageBannerTitle', 'Locks')?>
 
-<h2>Best Deadbolt & Security Door Locks for Home and Business in Myrtle Beach, SC</h2>
+<h2>Best Deadbolt & Security Door Locks for Home and Business in Conway, SC</h2>
 
-<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Myrtle Beach Locksmith SC">Myrtle Beach, SC</a> offer a wide variety of locks for home, business & office use in Myrtle Beach, SC. Our inventory includes simple home door locks, cabinet locks, deadbolts as well as high security Medeco, Mul-T-Lock & Mortis locks. If required, We also offer 24/7 on-site <a  href="<?php echo url('lock-installation') ?>" title="Lock installation service">lock installation service</a> in Myrtle Beach, SC.</p>
-
+<p class="mb-5"> <a href="<?php echo url('/'); ?>" title="Conway Locksmith"> Conway Locksmith</a> provides our clients with a wide array of locks for both residential and commercial applications including high security deadbolt locks, mortise locks, cabinet locks, thumbturn locks, biometric locks, smart locks, Bluetooth locks, and locks crafted by the industry’s 
+leading brand leaders including Mul-T-Lock, Schlage, Medeco, and much more!
+</p>
 <div class="row">  
 
 <div class="col-md-4 col-sm-12 pb-5 text-center"><h3 class="text-dark size-4">Medeco Deadbolt</h3><img src="<?php echo assets('img/locks/locks-deadbolt.png');?>" alt="medeco deadbolt" width="150" title="Medeco Deadbolt"></div>

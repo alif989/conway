@@ -1,5 +1,5 @@
 <?php $reviews = include 'App/testimonialData.php';  ?>
-<?php Flight::set('innerPageBannerTitle', 'Locksmith Service Customer Reviews in Myrtle Beach')?>
+<?php Flight::set('innerPageBannerTitle', 'Locksmith Service Customer Reviews in Conway')?>
 
 
  <div class="container">
@@ -10,7 +10,7 @@
     </h2>
     <p>
         Read to what our satisfied customers are saying about our locksmith service on 
-        <a href="#" title="Myrtle Beach Locksmith on Google Reviews" target="_blank">Google</a> and  <a href="https://www.yelp.com/" title="Myrtle Beach Locksmith on Yelp Reviews" target="_blank">Yelp</a>. With thousands of happy and satisfied clients in the Myrtle Beach, SC area, <a href="<?php echo url('/'); ?>" title=" Myrtle Beach Locksmith "> Myrtle Beach Locksmith</a> is one of the trusted locksmith service provider who are proud to serve our dedicated customers for over a decade.
+        <a href="#" title="Conway Locksmith on Google Reviews" target="_blank">Google</a> and  <a href="https://www.yelp.com/" title="Conway Locksmith on Yelp Reviews" target="_blank">Yelp</a>. With thousands of happy and satisfied clients in the Conway, SC area, <a href="<?php echo url('/'); ?>" title=" Conway Locksmith "> Conway Locksmith</a> is one of the trusted locksmith service provider who are proud to serve our dedicated customers for over a decade.
     </p>
 
     <?php if ($reviews) {?>
@@ -42,7 +42,7 @@
     <?php }?> 
 
 <h3 class="h4 mt-5 text-center highlight-2"> 
-Read More locksmith in Myrtle Beach, SC Customer Reviews on <a class="highlight" href="https://maps.google.com" title="Myrtle Beach Locksmith Customer Reviews on Google Reviews" target="_blank">Google</a> and  <a class="highlight" href="https://www.yelp.com/" title="Myrtle Beach Locksmith Customer Reviews on Yelp Reviews" target="_blank">Yelp</a>
+Read More locksmith in Conway, SC Customer Reviews on <a class="highlight" href="https://maps.google.com" title="Conway Locksmith Customer Reviews on Google Reviews" target="_blank">Google</a> and  <a class="highlight" href="https://www.yelp.com/" title="Conway Locksmith Customer Reviews on Yelp Reviews" target="_blank">Yelp</a>
 </h3> 
  
 </div>

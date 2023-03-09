@@ -1,10 +1,8 @@
-<?php
+<?php 
 
 /**
- * User class.
- *
+ * User class
+ * 
  * @author Mickael Burguet <www.rundef.com>
  */
-class User extends Corcel\User
-{
-}
+class User extends Corcel\User {}

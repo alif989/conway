@@ -1,9 +1,11 @@
 <?php Flight::set('innerPageBannerTitle', 'Keys')?>
  
-<h2>Best Keys of Deadbolt & Security Door Locks for Home and Business in Myrtle Beach, SC</h2>
+<h2>Best Keys of Deadbolt & Security Door Locks for Home and Business in Conway, SC</h2>
 
-<p class="mb-5">  <a href="<?php echo url('/')?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> offers cutting and duplication services for a large variety of key types – including residential and commercial door keys, and keys for high-security locks. We can re-key lost keys from code, or create master keys that open many locks – as well as change keys that work on some, but not all locks.</p>
-         
+<p class="mb-5">  
+Key replacement, duplication, and cutting services for a wide range of key types including high-security lock keys, car keys, transponder keys, and much more. Conway Locksmith provides rekeying,
+ key repair, key programming, master keying, and broken key extraction services.
+</p>
    <div class="row align-items-center justify-content-center">
         <div class="col-sm-2 col-md-3 text-center" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1000">
             <h3 class="text-dark  size-4">Kwickset keys</h3>

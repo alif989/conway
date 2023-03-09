@@ -3,22 +3,22 @@
 	<div class="col-lg-6">
 		<div class="col-lg-12 ml-lg-auto mr-lg-auto">
 			<h3 class="mb-3">
-				Myrtle Beach Locksmith is based on Myrtle Beach, SC with main offices located at:
+				Conway Locksmith is based on Conway, SC with main offices located at:
 			</h3>
 
 			<img src="<?php echo assets('img/myrtle-beach-locksmith-contact.jpg');?>"
-				alt="Myrtle Beach Locksmith in Myrtle Beach, SC" class="img-fluid" width="650">
+				alt="Conway Locksmith in Conway, SC" class="img-fluid" width="650">
 
 			<h3 class="text-uppercase size-3 light-font lead mb-2 pb-0 mt-3">Address:</h3>
 
 			<p>
 				<a href="#" target="_blank">
-					<img src="<?php echo assets('img/google_map_icon.png');?>" width="25" Myrtle Beach
-						alt="Myrtle Beach Locksmith Map Location">
+					<img src="<?php echo assets('img/google_map_icon.png');?>" width="25" Conway
+						alt="Conway Locksmith Map Location">
 				</a>
 				&nbsp;
 				Address: 
-				 Myrtle Beach, SC  ,
+				 Conway, SC  ,
 				United States
 
 			</p>

@@ -1,15 +1,12 @@
 <?php
 
 /**
- * Corcel\Comment.
+ * Corcel\Comment
  *
  * @author Junior Grossi <juniorgro@gmail.com>
  */
 
 namespace Corcel;
-
-use Corcel\Traits\CreatedAtTrait;
-use Corcel\Traits\UpdatedAtTrait;
 
 class Comment extends Model
 {
@@ -23,7 +20,7 @@ class Comment extends Model
     protected $dates = ['comment_date'];
 
     /**
-     * Post relationship.
+     * Post relationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -33,7 +30,7 @@ class Comment extends Model
     }
 
     /**
-     * Original relationship.
+     * Original relationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -43,7 +40,7 @@ class Comment extends Model
     }
 
     /**
-     * Replies relationship.
+     * Replies relationship
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -53,7 +50,7 @@ class Comment extends Model
     }
 
     /**
-     * Verify if the current comment is approved.
+     * Verify if the current comment is approved
      *
      * @return bool
      */
@@ -63,7 +60,7 @@ class Comment extends Model
     }
 
     /**
-     * Verify if the current comment is a reply from another comment.
+     * Verify if the current comment is a reply from another comment
      *
      * @return bool
      */
@@ -73,7 +70,7 @@ class Comment extends Model
     }
 
     /**
-     * Verify if the current comment has replies.
+     * Verify if the current comment has replies
      *
      * @return bool
      */
@@ -83,24 +80,22 @@ class Comment extends Model
     }
 
     /**
-     * Find a comment by post ID.
+     * Find a comment by post ID
      *
      * @param int $postId
-     *
      * @return \Corcel\Comment
      */
     public static function findByPostId($postId)
     {
-        $instance = new static();
+        $instance = new static;
 
         return $instance->where('comment_post_ID', $postId)->get();
     }
 
     /**
-     * Override the parent newQuery() to the custom CommentBuilder class.
+     * Override the parent newQuery() to the custom CommentBuilder class
      *
      * @param bool $excludeDeleted
-     *
      * @return \Corcel\CommentBuilder
      */
     public function newQuery($excludeDeleted = true)

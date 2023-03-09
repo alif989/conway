@@ -1,7 +1,7 @@
 <?php Flight::set('innerPageBannerTitle', 'Safes')?>
-<h2>Best Safes & Security Safes for Home and Business in Myrtle Beach, SC</h2> 
+<h2>Best Safes & Security Safes for Home and Business in Conway, SC</h2> 
 
-    <p class="mb-5">  <a href="<?php echo url('/') ?>" title=" Myrtle Beach Locksmith SC"> Myrtle Beach Locksmith</a> carries an extension inventory of safes for both residential and business use. Our stock includes Security Safe, Wall Safe, Combination Safe, Electronic Safe, Depository Safe, Fire Resistant, Floor Safe, Gun Safe, Water Resistant.</p>
+    <p class="mb-5">  <a href="<?php echo url('/') ?>" title=" Conway Locksmith SC"> Conway Locksmith</a> carries an extension inventory of safes for both residential and business use. Our stock includes Security Safe, Wall Safe, Combination Safe, Electronic Safe, Depository Safe, Fire Resistant, Floor Safe, Gun Safe, Water Resistant.</p>
 
 
 

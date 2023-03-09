@@ -7,8 +7,8 @@ namespace Composer\Autoload;
 class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
 {
     public static $files = array (
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
         'fc73bab8d04e21bcdda37ca319c63800' => __DIR__ . '/..' . '/mikecao/flight/flight/autoload.php',
         '5b7d984aab5ae919d3362ad9588977eb' => __DIR__ . '/..' . '/mikecao/flight/flight/Flight.php',
@@ -23,15 +23,17 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
-        array (
-            'Thunder\\Shortcode\\Tests\\' => 24,
-            'Thunder\\Shortcode\\' => 18,
-        ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
+        ),
+        'P' => 
+        array (
+            'Psr\\SimpleCache\\' => 16,
+            'Psr\\Container\\' => 14,
         ),
         'M' => 
         array (
@@ -42,38 +44,51 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         array (
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Pagination\\' => 22,
+            'Illuminate\\Hashing\\' => 19,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
         ),
+        'G' => 
+        array (
+            'GUMP\\' => 5,
+        ),
         'D' => 
         array (
+            'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Common\\Inflector\\' => 26,
         ),
         'C' => 
         array (
             'Creitive\\Breadcrumbs\\' => 21,
             'Corcel\\' => 7,
-            'Carbon\\' => 7,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Thunder\\Shortcode\\Tests\\' => 
+        'Symfony\\Polyfill\\Php80\\' => 
         array (
-            0 => __DIR__ . '/..' . '/thunderer/shortcode/tests',
-        ),
-        'Thunder\\Shortcode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/thunderer/shortcode/src',
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'MatthiasMullie\\PathConverter\\' => 
         array (
@@ -91,6 +106,10 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         array (
             0 => __DIR__ . '/..' . '/illuminate/pagination',
         ),
+        'Illuminate\\Hashing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/hashing',
+        ),
         'Illuminate\\Database\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/database',
@@ -102,6 +121,14 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'GUMP\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wixel/gump/src',
+        ),
+        'Doctrine\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
@@ -115,13 +142,20 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         array (
             0 => __DIR__ . '/..' . '/jgrossi/corcel/src',
         ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $prefixesPsr0 = array (
+        'U' => 
+        array (
+            'UpdateHelper\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
+            ),
+        ),
         'S' => 
         array (
             'SitemapPHP' => 
@@ -129,18 +163,13 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
                 0 => __DIR__ . '/..' . '/evert/sitemap-php/src',
             ),
         ),
-        'H' => 
-        array (
-            'Hautelook' => 
-            array (
-                0 => __DIR__ . '/..' . '/hautelook/phpass/src',
-            ),
-        ),
     );
 
     public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Category' => __DIR__ . '/..' . '/jgrossi/corcel/models/Category.php',
         'Comment' => __DIR__ . '/..' . '/jgrossi/corcel/models/Comment.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'EasyPeasyICS' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/EasyPeasyICS.php',
         'Menu' => __DIR__ . '/..' . '/jgrossi/corcel/models/Menu.php',
         'Options' => __DIR__ . '/..' . '/jgrossi/corcel/models/Options.php',
@@ -149,10 +178,14 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         'PHPMailerOAuthGoogle' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmaileroauthgoogle.php',
         'POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.pop3.php',
         'Page' => __DIR__ . '/..' . '/jgrossi/corcel/models/Page.php',
+        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'Post' => __DIR__ . '/..' . '/jgrossi/corcel/models/Post.php',
         'SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.smtp.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Taxonomy' => __DIR__ . '/..' . '/jgrossi/corcel/models/Taxonomy.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'User' => __DIR__ . '/..' . '/jgrossi/corcel/models/User.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'ntlm_sasl_client_class' => __DIR__ . '/..' . '/phpmailer/phpmailer/extras/ntlm_sasl_client.php',
         'phpmailerException' => __DIR__ . '/..' . '/phpmailer/phpmailer/class.phpmailer.php',
     );
@@ -162,6 +195,7 @@ class ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit40e769e828681d9b8e59c92b5f36fc28::$classMap;
 

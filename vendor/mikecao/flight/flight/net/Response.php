@@ -30,6 +30,18 @@ class Response {
     protected $body;
 
     /**
+     * @var bool HTTP response sent
+     */
+    protected $sent = false;
+    
+    /**
+     * header Content-Length
+     *
+     * @var boolean
+     */
+    public $content_length = true;
+
+    /**
      * @var array HTTP status codes
      */
     public static $codes = array(
@@ -246,16 +258,34 @@ class Response {
             }
         }
 
-        // Send content length
-        $length = (extension_loaded('mbstring')) ?
-            mb_strlen($this->body, 'latin1') :
-            strlen($this->body);
+        if ($this->content_length) {
+            // Send content length
+            $length = $this->getContentLength();
 
-        if ($length > 0) {
-            header('Content-Length: '.$length);
+            if ($length > 0) {
+                header('Content-Length: '.$length);
+            }
         }
 
         return $this;
+    }
+
+    /**
+     * Gets the content length.
+     *
+     * @return string Content length
+     */
+    public function getContentLength() {
+        return extension_loaded('mbstring') ?
+            mb_strlen($this->body, 'latin1') :
+            strlen($this->body);
+    }
+
+    /**
+     * Gets whether response was sent.
+     */
+    public function sent() {
+        return $this->sent;
     }
 
     /**
@@ -270,7 +300,9 @@ class Response {
             $this->sendHeaders();
         }
 
-        exit($this->body);
+        echo $this->body;
+
+        $this->sent = true;
     }
 }
 
